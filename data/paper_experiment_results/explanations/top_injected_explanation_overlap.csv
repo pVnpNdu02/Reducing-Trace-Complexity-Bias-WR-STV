@@ -1,0 +1,6 @@
+top_k,overlap_count,overlap_ratio,explained_services,injected_services,overlap_services,traceID,anomaly_score,root_operation
+5,2,1.0,"['ts-admin-basic-info-service', 'ts-config-service']","['ts-admin-basic-info-service', 'ts-config-service']","['ts-admin-basic-info-service', 'ts-config-service']",0915ee7798c08138_inj_latency_v2,5.0,deleteConfig
+5,2,1.0,"['ts-admin-basic-info-service', 'ts-station-service']","['ts-admin-basic-info-service', 'ts-station-service']","['ts-admin-basic-info-service', 'ts-station-service']",09bd020ecb37a825_inj_latency_v2,5.0,addStation
+5,2,1.0,"['ts-admin-basic-info-service', 'ts-contacts-service']","['ts-admin-basic-info-service', 'ts-contacts-service']","['ts-admin-basic-info-service', 'ts-contacts-service']",2b0431b78df04d9b_inj_latency_v2,5.0,modifyContacts
+5,2,1.0,"['ts-admin-basic-info-service', 'ts-price-service']","['ts-admin-basic-info-service', 'ts-price-service']","['ts-admin-basic-info-service', 'ts-price-service']",34a34c92383ae5f0_inj_latency_v2,5.0,getAllPrices
+5,2,1.0,"['ts-admin-basic-info-service', 'ts-contacts-service']","['ts-admin-basic-info-service', 'ts-contacts-service']","['ts-admin-basic-info-service', 'ts-contacts-service']",2a43c7464ad87899_inj_latency_v2,5.0,addContacts

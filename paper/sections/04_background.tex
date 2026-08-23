@@ -1,0 +1,102 @@
+\section{Background and Motivation}
+\label{sec:background}
+
+\subsection{Distributed Traces}
+
+A distributed trace records the end-to-end execution of a single user
+request as it propagates through multiple interacting microservices
+\cite{sigelman2010dapper}. Each trace consists of a collection of
+\emph{spans}, where every span represents an individual service
+invocation together with execution metadata, including the service name,
+operation name, start time, duration, and parent-child relationship. The
+parent-child relationships among spans allow a trace to be interpreted as
+a causal execution structure, from which request paths across services
+can be reconstructed. Because traces vary in both execution path and
+structural complexity, they provide a rich source of information for
+performance analysis and anomaly detection.
+
+\subsection{Service Trace Vectors}
+
+Although distributed traces capture detailed execution behavior, their
+variable length and hierarchical structure make them unsuitable for
+direct use by conventional machine learning algorithms that require
+fixed-dimensional inputs. TraceAnomaly~\cite{liu2020traceanomaly}
+addresses this limitation through the Service Trace Vector (STV), which
+maps each distributed trace into a fixed-dimensional feature vector while
+preserving the correspondence between features and service call paths.
+
+Following TraceAnomaly, each feature 
+$j=(\mathrm{service},\mathrm{service\_path})$ corresponds to a unique service reached through a particular root-to-node execution path observed during training.
+For a trace \(i\), the feature value is defined as
+
+\begin{equation}
+x_{i,j}=\log\!\left(1+d_{i,j}\right),
+\label{eq:stv-value}
+\end{equation}
+
+where \(d_{i,j}\) denotes the maximum observed duration for feature \(j\)
+within trace \(i\). When the same service-path feature appears multiple
+times in a trace, the maximum duration is retained. Features that are
+absent from a trace are assigned a sentinel value of \(-1\), indicating
+that the corresponding service path was not executed. The logarithmic
+transformation reduces the dynamic range of span durations while
+preserving their relative ordering. Because every feature corresponds to
+a specific service path, the resulting representation remains directly
+interpretable and enables anomaly scores to be associated with concrete
+execution paths rather than latent embedding dimensions.
+
+\subsection{Motivation: Trace-Complexity Bias}
+\label{sec:complexity-bias-background}
+
+The STV representation provides an interpretable numerical description
+of distributed traces, but it also introduces an important
+characteristic: structurally larger traces naturally populate more STV
+features than smaller traces. Consequently, traces containing more
+services or spans may appear more unusual to an anomaly scoring method,
+even when the underlying system behavior is operationally normal.
+
+To investigate whether this structural difference influences anomaly
+scoring, we analyze the relationship between baseline STV anomaly scores
+and two measures of trace complexity: the number of distinct services
+and the total number of spans contained in each trace. The analysis is
+performed on real, non-injected test traces collected from three
+TrainTicket configurations~\cite{zhou2021trainticket}.
+
+\input{tables/table2_complexity_bias_baseline}
+
+As shown in Table~\ref{tab:complexity-bias-baseline}, baseline anomaly
+scores exhibit consistently strong positive correlations with both
+complexity measures across all three datasets. Because these
+measurements are obtained from traces without injected anomalies, the
+observed correlations cannot be attributed to successful detection of
+synthetic faults. Instead, they indicate that structural properties of a
+trace can substantially influence anomaly scores even when the observed
+executions are operationally normal.
+
+Figure~\ref{fig:bias} visualizes this relationship by plotting baseline
+anomaly scores against trace size for real, non-injected traces. The
+overall trend demonstrates that larger traces tend to receive higher
+baseline anomaly scores, motivating the need for an anomaly scoring
+strategy that is less sensitive to structural complexity.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=0.45\textwidth]{figures/complexity_bias_scatter.pdf}
+\caption{Relationship between baseline STV anomaly score and trace
+complexity on real, non-injected traces.}
+\label{fig:bias}
+\end{figure}
+
+\subsection{Design Intuition}
+
+The observations above suggest that anomaly scoring should depend on how
+unusual each feature is relative to its own expected behavior rather
+than on its absolute magnitude alone. Features whose latency values are
+consistent with their historical behavior should contribute little to the
+final anomaly score, even when they occur in a large trace. In contrast,
+features exhibiting unusually large deviations from their own learned
+normal behavior should receive greater emphasis. This intuition motivates
+the Weighted Residual Service Trace Vector (WR-STV) method introduced in
+the next section, which preserves the interpretability of the original
+STV representation while reducing the influence of trace structural
+complexity on anomaly scoring.

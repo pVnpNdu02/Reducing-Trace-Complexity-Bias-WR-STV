@@ -1,0 +1,52 @@
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+This paper studied trace-complexity bias in a common microservice
+anomaly scoring pattern: Service Trace Vector representations scored by
+an unnormalized unsupervised detector. On real, non-injected TrainTicket
+traces, baseline STV~+~Isolation Forest anomaly scores correlate strongly
+with trace size, with correlations of approximately
+\(r \approx 0.85\)--\(0.98\) for span and service-count based complexity
+measures. This finding shows that raw STV-based scores can reflect trace
+structural complexity rather than only operational abnormality.
+
+To address this issue, we proposed WR-STV, a lightweight STV-based
+scoring method that applies per-feature residual standardization,
+residual clipping, reliability weighting, and top-\(k\) aggregation.
+Across the evaluated datasets, WR-STV substantially reduces the measured
+correlation between anomaly score and trace complexity
+(\(r \approx 0.30\)) while improving controlled STV-visible latency
+anomaly ranking over baseline STV~+~Isolation Forest
+(within-dataset ROC-AUC \(0.605 \rightarrow 0.814\)). Cross-dataset
+experiments also show promising transfer behavior
+(\(0.622 \rightarrow 0.803\)), although these results should be
+interpreted cautiously because they are based on only six directed
+train-test pairs.
+
+The ablation results indicate that most of the improvement comes from
+feature-wise residual normalization, while the proposed reliability
+weighting contributes a smaller, metric-dependent refinement. WR-STV
+also provides interpretable service-path-level evidence, with top-3
+contributing service paths recovering more than \(90\%\) of known
+injected paths in the evaluated setting. Runtime analysis further shows
+that WR-STV achieves roughly a \(16\times\) lower per-trace scoring time
+than Isolation Forest-based baselines. Overall, the results support
+WR-STV as a lightweight and interpretable approach for reducing
+trace-complexity bias in controlled STV-visible latency anomaly scoring,
+rather than as a general solution to all microservice anomaly types.
+
+\subsection*{Future Work}
+
+Future work will extend this study in four directions. First, evaluation
+should include anomalies beyond STV-visible latency perturbations,
+including dropped calls, novel call paths, missing spans, and other
+structural trace anomalies. Second, WR-STV should be evaluated on
+additional services, benchmark systems, and production-like trace
+datasets to test whether the observed complexity-bias pattern
+generalizes beyond \texttt{ts-order-service}. Third, the failure analysis
+suggests that very short traces are a predictable low-evidence case;
+future systems could attach confidence estimates to anomaly scores or
+abstain from scoring traces below a minimum evidence threshold. Finally,
+WR-STV should be evaluated against real fault-injection or incident-labeled
+datasets so that its behavior can be assessed on anomalies not generated
+by the same evaluation procedure used in this paper.

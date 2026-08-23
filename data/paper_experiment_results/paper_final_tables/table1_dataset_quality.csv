@@ -1,0 +1,4 @@
+dataset,traces,spans,services,median_spans_per_trace,max_spans_per_trace,traces_with_exactly_one_root_pct,problematic_non_root_missing_parent,duplicate_trace_span_pairs
+dataset_1,269,3788,32,3.0,245,100.0,0,0
+dataset_2,86,1306,33,3.0,149,100.0,0,0
+dataset_3,160,1993,33,3.0,146,100.0,0,0

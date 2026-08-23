@@ -1,0 +1,376 @@
+method_score,complexity_measure,pearson_correlation,n_traces,dataset,random_seed,abs_pearson_correlation
+Baseline STV + IF,num_spans,0.835350353101855,95,dataset_1,0,0.835350353101855
+Baseline STV + IF,num_services,0.9545284084348964,95,dataset_1,0,0.9545284084348964
+Baseline STV + IF,total_duration,0.796064501880485,95,dataset_1,0,0.796064501880485
+Baseline STV + IF,max_span_duration,0.6326246740500847,95,dataset_1,0,0.6326246740500847
+Baseline STV + IF,mean_span_duration,-0.04108696738779535,95,dataset_1,0,0.04108696738779535
+Enhanced STV + IF,num_spans,0.6676229273426462,95,dataset_1,0,0.6676229273426462
+Enhanced STV + IF,num_services,0.8696114135202526,95,dataset_1,0,0.8696114135202526
+Enhanced STV + IF,total_duration,0.6388470362289648,95,dataset_1,0,0.6388470362289648
+Enhanced STV + IF,max_span_duration,0.5007736117410677,95,dataset_1,0,0.5007736117410677
+Enhanced STV + IF,mean_span_duration,-0.06737175476026346,95,dataset_1,0,0.06737175476026346
+Global Residual STV k=1,num_spans,0.2068456228858876,95,dataset_1,0,0.2068456228858876
+Global Residual STV k=1,num_services,0.30575032450475803,95,dataset_1,0,0.30575032450475803
+Global Residual STV k=1,total_duration,0.32325701562001286,95,dataset_1,0,0.32325701562001286
+Global Residual STV k=1,max_span_duration,0.5272566187331971,95,dataset_1,0,0.5272566187331971
+Global Residual STV k=1,mean_span_duration,0.4187832457886606,95,dataset_1,0,0.4187832457886606
+Global Weighted Residual STV k=1,num_spans,0.16989830267378214,95,dataset_1,0,0.16989830267378214
+Global Weighted Residual STV k=1,num_services,0.27227374333254567,95,dataset_1,0,0.27227374333254567
+Global Weighted Residual STV k=1,total_duration,0.24003456682975438,95,dataset_1,0,0.24003456682975438
+Global Weighted Residual STV k=1,max_span_duration,0.3859186598196559,95,dataset_1,0,0.3859186598196559
+Global Weighted Residual STV k=1,mean_span_duration,0.3195955486196145,95,dataset_1,0,0.3195955486196145
+Request-Aware Weighted Residual STV k=1,num_spans,0.143756715242874,95,dataset_1,0,0.143756715242874
+Request-Aware Weighted Residual STV k=1,num_services,0.23628438217661382,95,dataset_1,0,0.23628438217661382
+Request-Aware Weighted Residual STV k=1,total_duration,0.2156538424839463,95,dataset_1,0,0.2156538424839463
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.3619428173273535,95,dataset_1,0,0.3619428173273535
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.30783602678844896,95,dataset_1,0,0.30783602678844896
+Baseline STV + IF,num_spans,0.8159641680970654,31,dataset_2,0,0.8159641680970654
+Baseline STV + IF,num_services,0.8571595971020485,31,dataset_2,0,0.8571595971020485
+Baseline STV + IF,total_duration,0.786241129659732,31,dataset_2,0,0.786241129659732
+Baseline STV + IF,max_span_duration,0.5618206757691487,31,dataset_2,0,0.5618206757691487
+Baseline STV + IF,mean_span_duration,0.007925645574729575,31,dataset_2,0,0.007925645574729575
+Enhanced STV + IF,num_spans,0.8144663996744369,31,dataset_2,0,0.8144663996744369
+Enhanced STV + IF,num_services,0.8441729249449588,31,dataset_2,0,0.8441729249449588
+Enhanced STV + IF,total_duration,0.6742792364885373,31,dataset_2,0,0.6742792364885373
+Enhanced STV + IF,max_span_duration,0.4218806124142189,31,dataset_2,0,0.4218806124142189
+Enhanced STV + IF,mean_span_duration,-0.05755882456822335,31,dataset_2,0,0.05755882456822335
+Global Residual STV k=1,num_spans,0.4025162866410096,31,dataset_2,0,0.4025162866410096
+Global Residual STV k=1,num_services,0.5071890246546821,31,dataset_2,0,0.5071890246546821
+Global Residual STV k=1,total_duration,0.5777240370311789,31,dataset_2,0,0.5777240370311789
+Global Residual STV k=1,max_span_duration,0.4590016342724976,31,dataset_2,0,0.4590016342724976
+Global Residual STV k=1,mean_span_duration,0.14158773761416232,31,dataset_2,0,0.14158773761416232
+Global Weighted Residual STV k=1,num_spans,0.31098900423163617,31,dataset_2,0,0.31098900423163617
+Global Weighted Residual STV k=1,num_services,0.38885901481168833,31,dataset_2,0,0.38885901481168833
+Global Weighted Residual STV k=1,total_duration,0.4337302373470923,31,dataset_2,0,0.4337302373470923
+Global Weighted Residual STV k=1,max_span_duration,0.3186587606462051,31,dataset_2,0,0.3186587606462051
+Global Weighted Residual STV k=1,mean_span_duration,0.09360355130539107,31,dataset_2,0,0.09360355130539107
+Request-Aware Weighted Residual STV k=1,num_spans,0.3138206035651766,31,dataset_2,0,0.3138206035651766
+Request-Aware Weighted Residual STV k=1,num_services,0.3913128870546518,31,dataset_2,0,0.3913128870546518
+Request-Aware Weighted Residual STV k=1,total_duration,0.4317434547117081,31,dataset_2,0,0.4317434547117081
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.3081004377210989,31,dataset_2,0,0.3081004377210989
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.06965407795106618,31,dataset_2,0,0.06965407795106618
+Baseline STV + IF,num_spans,0.9762895825550839,56,dataset_3,0,0.9762895825550839
+Baseline STV + IF,num_services,0.9872078414323487,56,dataset_3,0,0.9872078414323487
+Baseline STV + IF,total_duration,0.656071309746233,56,dataset_3,0,0.656071309746233
+Baseline STV + IF,max_span_duration,0.638761310898134,56,dataset_3,0,0.638761310898134
+Baseline STV + IF,mean_span_duration,0.18630807630241228,56,dataset_3,0,0.18630807630241228
+Enhanced STV + IF,num_spans,0.9780389404073114,56,dataset_3,0,0.9780389404073114
+Enhanced STV + IF,num_services,0.9661918162510236,56,dataset_3,0,0.9661918162510236
+Enhanced STV + IF,total_duration,0.617050545874387,56,dataset_3,0,0.617050545874387
+Enhanced STV + IF,max_span_duration,0.6004898720638695,56,dataset_3,0,0.6004898720638695
+Enhanced STV + IF,mean_span_duration,0.19689650043761978,56,dataset_3,0,0.19689650043761978
+Global Residual STV k=1,num_spans,0.4339173223514109,56,dataset_3,0,0.4339173223514109
+Global Residual STV k=1,num_services,0.479935111759014,56,dataset_3,0,0.479935111759014
+Global Residual STV k=1,total_duration,0.42149170384842316,56,dataset_3,0,0.42149170384842316
+Global Residual STV k=1,max_span_duration,0.47689393661950524,56,dataset_3,0,0.47689393661950524
+Global Residual STV k=1,mean_span_duration,0.5933371173033354,56,dataset_3,0,0.5933371173033354
+Global Weighted Residual STV k=1,num_spans,0.30556758789706207,56,dataset_3,0,0.30556758789706207
+Global Weighted Residual STV k=1,num_services,0.320343883623685,56,dataset_3,0,0.320343883623685
+Global Weighted Residual STV k=1,total_duration,0.422147149431038,56,dataset_3,0,0.422147149431038
+Global Weighted Residual STV k=1,max_span_duration,0.45757592054323754,56,dataset_3,0,0.45757592054323754
+Global Weighted Residual STV k=1,mean_span_duration,0.4767569505629839,56,dataset_3,0,0.4767569505629839
+Request-Aware Weighted Residual STV k=1,num_spans,0.30783079311956196,56,dataset_3,0,0.30783079311956196
+Request-Aware Weighted Residual STV k=1,num_services,0.32383220247205413,56,dataset_3,0,0.32383220247205413
+Request-Aware Weighted Residual STV k=1,total_duration,0.4254676313484786,56,dataset_3,0,0.4254676313484786
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.459855765521942,56,dataset_3,0,0.459855765521942
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.4635558571490432,56,dataset_3,0,0.4635558571490432
+Baseline STV + IF,num_spans,0.7578569837150713,95,dataset_1,1,0.7578569837150713
+Baseline STV + IF,num_services,0.9537901716135554,95,dataset_1,1,0.9537901716135554
+Baseline STV + IF,total_duration,0.7565834848297511,95,dataset_1,1,0.7565834848297511
+Baseline STV + IF,max_span_duration,0.5319854908031224,95,dataset_1,1,0.5319854908031224
+Baseline STV + IF,mean_span_duration,0.07237933344221434,95,dataset_1,1,0.07237933344221434
+Enhanced STV + IF,num_spans,0.6999669296411991,95,dataset_1,1,0.6999669296411991
+Enhanced STV + IF,num_services,0.881459262693595,95,dataset_1,1,0.881459262693595
+Enhanced STV + IF,total_duration,0.612371810513711,95,dataset_1,1,0.612371810513711
+Enhanced STV + IF,max_span_duration,0.4267291603369794,95,dataset_1,1,0.4267291603369794
+Enhanced STV + IF,mean_span_duration,0.019304197483243028,95,dataset_1,1,0.019304197483243028
+Global Residual STV k=1,num_spans,0.19791815386781164,95,dataset_1,1,0.19791815386781164
+Global Residual STV k=1,num_services,0.3335008852773224,95,dataset_1,1,0.3335008852773224
+Global Residual STV k=1,total_duration,0.3657332559892519,95,dataset_1,1,0.3657332559892519
+Global Residual STV k=1,max_span_duration,0.49621333959527764,95,dataset_1,1,0.49621333959527764
+Global Residual STV k=1,mean_span_duration,0.44326292713481896,95,dataset_1,1,0.44326292713481896
+Global Weighted Residual STV k=1,num_spans,0.21650727843283535,95,dataset_1,1,0.21650727843283535
+Global Weighted Residual STV k=1,num_services,0.31598400826531214,95,dataset_1,1,0.31598400826531214
+Global Weighted Residual STV k=1,total_duration,0.2387718509995435,95,dataset_1,1,0.2387718509995435
+Global Weighted Residual STV k=1,max_span_duration,0.3271130769990438,95,dataset_1,1,0.3271130769990438
+Global Weighted Residual STV k=1,mean_span_duration,0.28634189604039023,95,dataset_1,1,0.28634189604039023
+Request-Aware Weighted Residual STV k=1,num_spans,0.16489005437041154,95,dataset_1,1,0.16489005437041154
+Request-Aware Weighted Residual STV k=1,num_services,0.24591554179287173,95,dataset_1,1,0.24591554179287173
+Request-Aware Weighted Residual STV k=1,total_duration,0.20119459519183797,95,dataset_1,1,0.20119459519183797
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.3033377547350506,95,dataset_1,1,0.3033377547350506
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.3079455135885395,95,dataset_1,1,0.3079455135885395
+Baseline STV + IF,num_spans,0.9521794217859385,31,dataset_2,1,0.9521794217859385
+Baseline STV + IF,num_services,0.9151922233466477,31,dataset_2,1,0.9151922233466477
+Baseline STV + IF,total_duration,0.8339637255094235,31,dataset_2,1,0.8339637255094235
+Baseline STV + IF,max_span_duration,0.6442337823261659,31,dataset_2,1,0.6442337823261659
+Baseline STV + IF,mean_span_duration,-0.15929087595110605,31,dataset_2,1,0.15929087595110605
+Enhanced STV + IF,num_spans,0.6682537830430298,31,dataset_2,1,0.6682537830430298
+Enhanced STV + IF,num_services,0.7379334765039107,31,dataset_2,1,0.7379334765039107
+Enhanced STV + IF,total_duration,0.6715280387031618,31,dataset_2,1,0.6715280387031618
+Enhanced STV + IF,max_span_duration,0.5341057396946262,31,dataset_2,1,0.5341057396946262
+Enhanced STV + IF,mean_span_duration,-0.04791657495699301,31,dataset_2,1,0.04791657495699301
+Global Residual STV k=1,num_spans,0.42004785467487094,31,dataset_2,1,0.42004785467487094
+Global Residual STV k=1,num_services,0.4903801744084011,31,dataset_2,1,0.4903801744084011
+Global Residual STV k=1,total_duration,0.36780044407606216,31,dataset_2,1,0.36780044407606216
+Global Residual STV k=1,max_span_duration,0.3428824186669424,31,dataset_2,1,0.3428824186669424
+Global Residual STV k=1,mean_span_duration,0.19937136535030464,31,dataset_2,1,0.19937136535030464
+Global Weighted Residual STV k=1,num_spans,0.1606957784033455,31,dataset_2,1,0.1606957784033455
+Global Weighted Residual STV k=1,num_services,0.21771550175509113,31,dataset_2,1,0.21771550175509113
+Global Weighted Residual STV k=1,total_duration,0.17775406552659068,31,dataset_2,1,0.17775406552659068
+Global Weighted Residual STV k=1,max_span_duration,0.2081872139947072,31,dataset_2,1,0.2081872139947072
+Global Weighted Residual STV k=1,mean_span_duration,0.20508231451065007,31,dataset_2,1,0.20508231451065007
+Request-Aware Weighted Residual STV k=1,num_spans,0.1606957784033455,31,dataset_2,1,0.1606957784033455
+Request-Aware Weighted Residual STV k=1,num_services,0.21771550175509113,31,dataset_2,1,0.21771550175509113
+Request-Aware Weighted Residual STV k=1,total_duration,0.17775406552659068,31,dataset_2,1,0.17775406552659068
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.2081872139947072,31,dataset_2,1,0.2081872139947072
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.20508231451065007,31,dataset_2,1,0.20508231451065007
+Baseline STV + IF,num_spans,0.969803428624849,56,dataset_3,1,0.969803428624849
+Baseline STV + IF,num_services,0.984299430005439,56,dataset_3,1,0.984299430005439
+Baseline STV + IF,total_duration,0.6701319143852879,56,dataset_3,1,0.6701319143852879
+Baseline STV + IF,max_span_duration,0.6505448870290013,56,dataset_3,1,0.6505448870290013
+Baseline STV + IF,mean_span_duration,0.18405586554912404,56,dataset_3,1,0.18405586554912404
+Enhanced STV + IF,num_spans,0.9362793754346682,56,dataset_3,1,0.9362793754346682
+Enhanced STV + IF,num_services,0.9275105859986074,56,dataset_3,1,0.9275105859986074
+Enhanced STV + IF,total_duration,0.8390004667288515,56,dataset_3,1,0.8390004667288515
+Enhanced STV + IF,max_span_duration,0.8181535208697099,56,dataset_3,1,0.8181535208697099
+Enhanced STV + IF,mean_span_duration,0.2362737334262494,56,dataset_3,1,0.2362737334262494
+Global Residual STV k=1,num_spans,0.3948139595346287,56,dataset_3,1,0.3948139595346287
+Global Residual STV k=1,num_services,0.4203231727174199,56,dataset_3,1,0.4203231727174199
+Global Residual STV k=1,total_duration,0.29576394380980037,56,dataset_3,1,0.29576394380980037
+Global Residual STV k=1,max_span_duration,0.3296195340717518,56,dataset_3,1,0.3296195340717518
+Global Residual STV k=1,mean_span_duration,0.28812934372242743,56,dataset_3,1,0.28812934372242743
+Global Weighted Residual STV k=1,num_spans,0.23327798469991412,56,dataset_3,1,0.23327798469991412
+Global Weighted Residual STV k=1,num_services,0.2677546427317655,56,dataset_3,1,0.2677546427317655
+Global Weighted Residual STV k=1,total_duration,0.2362531221624633,56,dataset_3,1,0.2362531221624633
+Global Weighted Residual STV k=1,max_span_duration,0.27065402799455196,56,dataset_3,1,0.27065402799455196
+Global Weighted Residual STV k=1,mean_span_duration,0.2553598708394747,56,dataset_3,1,0.2553598708394747
+Request-Aware Weighted Residual STV k=1,num_spans,0.22997038053872745,56,dataset_3,1,0.22997038053872745
+Request-Aware Weighted Residual STV k=1,num_services,0.2650677726145089,56,dataset_3,1,0.2650677726145089
+Request-Aware Weighted Residual STV k=1,total_duration,0.23420226395261592,56,dataset_3,1,0.23420226395261592
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.2685198766125386,56,dataset_3,1,0.2685198766125386
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.251623645032782,56,dataset_3,1,0.251623645032782
+Baseline STV + IF,num_spans,0.9453623478340655,95,dataset_1,2,0.9453623478340655
+Baseline STV + IF,num_services,0.9630689275667687,95,dataset_1,2,0.9630689275667687
+Baseline STV + IF,total_duration,0.8239394236300017,95,dataset_1,2,0.8239394236300017
+Baseline STV + IF,max_span_duration,0.7522155957336112,95,dataset_1,2,0.7522155957336112
+Baseline STV + IF,mean_span_duration,0.02416624788033049,95,dataset_1,2,0.02416624788033049
+Enhanced STV + IF,num_spans,0.8934465708506121,95,dataset_1,2,0.8934465708506121
+Enhanced STV + IF,num_services,0.9001517179652236,95,dataset_1,2,0.9001517179652236
+Enhanced STV + IF,total_duration,0.8771490176991823,95,dataset_1,2,0.8771490176991823
+Enhanced STV + IF,max_span_duration,0.8055832509403088,95,dataset_1,2,0.8055832509403088
+Enhanced STV + IF,mean_span_duration,0.05961627135210711,95,dataset_1,2,0.05961627135210711
+Global Residual STV k=1,num_spans,0.3238399392989199,95,dataset_1,2,0.3238399392989199
+Global Residual STV k=1,num_services,0.3529522650569598,95,dataset_1,2,0.3529522650569598
+Global Residual STV k=1,total_duration,0.4050677168309625,95,dataset_1,2,0.4050677168309625
+Global Residual STV k=1,max_span_duration,0.43689126768098724,95,dataset_1,2,0.43689126768098724
+Global Residual STV k=1,mean_span_duration,0.32923848017026675,95,dataset_1,2,0.32923848017026675
+Global Weighted Residual STV k=1,num_spans,0.27267729754654535,95,dataset_1,2,0.27267729754654535
+Global Weighted Residual STV k=1,num_services,0.2889795036986147,95,dataset_1,2,0.2889795036986147
+Global Weighted Residual STV k=1,total_duration,0.3214623186994259,95,dataset_1,2,0.3214623186994259
+Global Weighted Residual STV k=1,max_span_duration,0.37143729032445605,95,dataset_1,2,0.37143729032445605
+Global Weighted Residual STV k=1,mean_span_duration,0.3600912171199883,95,dataset_1,2,0.3600912171199883
+Request-Aware Weighted Residual STV k=1,num_spans,0.22941199601890963,95,dataset_1,2,0.22941199601890963
+Request-Aware Weighted Residual STV k=1,num_services,0.238068495550334,95,dataset_1,2,0.238068495550334
+Request-Aware Weighted Residual STV k=1,total_duration,0.28431152973574747,95,dataset_1,2,0.28431152973574747
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.34291325993753646,95,dataset_1,2,0.34291325993753646
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.3621284599810815,95,dataset_1,2,0.3621284599810815
+Baseline STV + IF,num_spans,0.8572318565610799,31,dataset_2,2,0.8572318565610799
+Baseline STV + IF,num_services,0.7910521570266377,31,dataset_2,2,0.7910521570266377
+Baseline STV + IF,total_duration,0.43191590878770236,31,dataset_2,2,0.43191590878770236
+Baseline STV + IF,max_span_duration,0.16033254022477172,31,dataset_2,2,0.16033254022477172
+Baseline STV + IF,mean_span_duration,-0.01808481892952437,31,dataset_2,2,0.01808481892952437
+Enhanced STV + IF,num_spans,0.905748550257631,31,dataset_2,2,0.905748550257631
+Enhanced STV + IF,num_services,0.8599378791774742,31,dataset_2,2,0.8599378791774742
+Enhanced STV + IF,total_duration,0.5167223045163095,31,dataset_2,2,0.5167223045163095
+Enhanced STV + IF,max_span_duration,0.21367532359128222,31,dataset_2,2,0.21367532359128222
+Enhanced STV + IF,mean_span_duration,0.020343594016685642,31,dataset_2,2,0.020343594016685642
+Global Residual STV k=1,num_spans,0.3830918690677007,31,dataset_2,2,0.3830918690677007
+Global Residual STV k=1,num_services,0.41514565656446184,31,dataset_2,2,0.41514565656446184
+Global Residual STV k=1,total_duration,0.36849973247505,31,dataset_2,2,0.36849973247505
+Global Residual STV k=1,max_span_duration,0.30444906567333263,31,dataset_2,2,0.30444906567333263
+Global Residual STV k=1,mean_span_duration,0.2660699823584214,31,dataset_2,2,0.2660699823584214
+Global Weighted Residual STV k=1,num_spans,0.42470585972047825,31,dataset_2,2,0.42470585972047825
+Global Weighted Residual STV k=1,num_services,0.46390351939046587,31,dataset_2,2,0.46390351939046587
+Global Weighted Residual STV k=1,total_duration,0.3947664486398122,31,dataset_2,2,0.3947664486398122
+Global Weighted Residual STV k=1,max_span_duration,0.28798934172693036,31,dataset_2,2,0.28798934172693036
+Global Weighted Residual STV k=1,mean_span_duration,0.22599500336868336,31,dataset_2,2,0.22599500336868336
+Request-Aware Weighted Residual STV k=1,num_spans,0.3823896311112574,31,dataset_2,2,0.3823896311112574
+Request-Aware Weighted Residual STV k=1,num_services,0.4193521683519151,31,dataset_2,2,0.4193521683519151
+Request-Aware Weighted Residual STV k=1,total_duration,0.42277870061222517,31,dataset_2,2,0.42277870061222517
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.3593519572475862,31,dataset_2,2,0.3593519572475862
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.3597126686608485,31,dataset_2,2,0.3597126686608485
+Baseline STV + IF,num_spans,0.9478125671436981,56,dataset_3,2,0.9478125671436981
+Baseline STV + IF,num_services,0.9766917120944603,56,dataset_3,2,0.9766917120944603
+Baseline STV + IF,total_duration,0.7892989724728143,56,dataset_3,2,0.7892989724728143
+Baseline STV + IF,max_span_duration,0.7850002391778704,56,dataset_3,2,0.7850002391778704
+Baseline STV + IF,mean_span_duration,0.22299927933476948,56,dataset_3,2,0.22299927933476948
+Enhanced STV + IF,num_spans,0.870407711307555,56,dataset_3,2,0.870407711307555
+Enhanced STV + IF,num_services,0.8756198460980168,56,dataset_3,2,0.8756198460980168
+Enhanced STV + IF,total_duration,0.906029548745162,56,dataset_3,2,0.906029548745162
+Enhanced STV + IF,max_span_duration,0.8957450648338565,56,dataset_3,2,0.8957450648338565
+Enhanced STV + IF,mean_span_duration,0.2798250694145052,56,dataset_3,2,0.2798250694145052
+Global Residual STV k=1,num_spans,0.32174936992243447,56,dataset_3,2,0.32174936992243447
+Global Residual STV k=1,num_services,0.3655425329591868,56,dataset_3,2,0.3655425329591868
+Global Residual STV k=1,total_duration,0.29182868044062493,56,dataset_3,2,0.29182868044062493
+Global Residual STV k=1,max_span_duration,0.29038524679325384,56,dataset_3,2,0.29038524679325384
+Global Residual STV k=1,mean_span_duration,0.10831499426669469,56,dataset_3,2,0.10831499426669469
+Global Weighted Residual STV k=1,num_spans,0.24179123277704426,56,dataset_3,2,0.24179123277704426
+Global Weighted Residual STV k=1,num_services,0.30526645349151177,56,dataset_3,2,0.30526645349151177
+Global Weighted Residual STV k=1,total_duration,0.22411335631736634,56,dataset_3,2,0.22411335631736634
+Global Weighted Residual STV k=1,max_span_duration,0.21541940574535973,56,dataset_3,2,0.21541940574535973
+Global Weighted Residual STV k=1,mean_span_duration,-0.013237982264163518,56,dataset_3,2,0.013237982264163518
+Request-Aware Weighted Residual STV k=1,num_spans,0.23999422414991384,56,dataset_3,2,0.23999422414991384
+Request-Aware Weighted Residual STV k=1,num_services,0.3066314259543784,56,dataset_3,2,0.3066314259543784
+Request-Aware Weighted Residual STV k=1,total_duration,0.22320223880418516,56,dataset_3,2,0.22320223880418516
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.2138264147219802,56,dataset_3,2,0.2138264147219802
+Request-Aware Weighted Residual STV k=1,mean_span_duration,-0.021312684337265943,56,dataset_3,2,0.021312684337265943
+Baseline STV + IF,num_spans,0.9240443531409852,95,dataset_1,3,0.9240443531409852
+Baseline STV + IF,num_services,0.9722425845530838,95,dataset_1,3,0.9722425845530838
+Baseline STV + IF,total_duration,0.8770560865782899,95,dataset_1,3,0.8770560865782899
+Baseline STV + IF,max_span_duration,0.7627932631029775,95,dataset_1,3,0.7627932631029775
+Baseline STV + IF,mean_span_duration,-0.09040937865636724,95,dataset_1,3,0.09040937865636724
+Enhanced STV + IF,num_spans,0.9197408067107958,95,dataset_1,3,0.9197408067107958
+Enhanced STV + IF,num_services,0.9417921365551504,95,dataset_1,3,0.9417921365551504
+Enhanced STV + IF,total_duration,0.9229668527159226,95,dataset_1,3,0.9229668527159226
+Enhanced STV + IF,max_span_duration,0.7895418503805871,95,dataset_1,3,0.7895418503805871
+Enhanced STV + IF,mean_span_duration,-0.05014932829401655,95,dataset_1,3,0.05014932829401655
+Global Residual STV k=1,num_spans,0.547416397290751,95,dataset_1,3,0.547416397290751
+Global Residual STV k=1,num_services,0.6021560928710723,95,dataset_1,3,0.6021560928710723
+Global Residual STV k=1,total_duration,0.5144550642944576,95,dataset_1,3,0.5144550642944576
+Global Residual STV k=1,max_span_duration,0.6004725285175546,95,dataset_1,3,0.6004725285175546
+Global Residual STV k=1,mean_span_duration,0.18858577475211347,95,dataset_1,3,0.18858577475211347
+Global Weighted Residual STV k=1,num_spans,0.3954765181667269,95,dataset_1,3,0.3954765181667269
+Global Weighted Residual STV k=1,num_services,0.4509844724086469,95,dataset_1,3,0.4509844724086469
+Global Weighted Residual STV k=1,total_duration,0.3918674357270724,95,dataset_1,3,0.3918674357270724
+Global Weighted Residual STV k=1,max_span_duration,0.5038321276425995,95,dataset_1,3,0.5038321276425995
+Global Weighted Residual STV k=1,mean_span_duration,0.30484548653403026,95,dataset_1,3,0.30484548653403026
+Request-Aware Weighted Residual STV k=1,num_spans,0.3418389565709931,95,dataset_1,3,0.3418389565709931
+Request-Aware Weighted Residual STV k=1,num_services,0.386541947155699,95,dataset_1,3,0.386541947155699
+Request-Aware Weighted Residual STV k=1,total_duration,0.35445112857807065,95,dataset_1,3,0.35445112857807065
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.48315760485099,95,dataset_1,3,0.48315760485099
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.32467937905953265,95,dataset_1,3,0.32467937905953265
+Baseline STV + IF,num_spans,0.7485865753923979,31,dataset_2,3,0.7485865753923979
+Baseline STV + IF,num_services,0.7490368620364134,31,dataset_2,3,0.7490368620364134
+Baseline STV + IF,total_duration,0.7467151960596774,31,dataset_2,3,0.7467151960596774
+Baseline STV + IF,max_span_duration,0.6159838298217615,31,dataset_2,3,0.6159838298217615
+Baseline STV + IF,mean_span_duration,-0.051367748240364434,31,dataset_2,3,0.051367748240364434
+Enhanced STV + IF,num_spans,0.7482320035355139,31,dataset_2,3,0.7482320035355139
+Enhanced STV + IF,num_services,0.7478646625407361,31,dataset_2,3,0.7478646625407361
+Enhanced STV + IF,total_duration,0.7668983848367192,31,dataset_2,3,0.7668983848367192
+Enhanced STV + IF,max_span_duration,0.6434656820678234,31,dataset_2,3,0.6434656820678234
+Enhanced STV + IF,mean_span_duration,-0.053441288962404326,31,dataset_2,3,0.053441288962404326
+Global Residual STV k=1,num_spans,0.2968766826450613,31,dataset_2,3,0.2968766826450613
+Global Residual STV k=1,num_services,0.30781827921010574,31,dataset_2,3,0.30781827921010574
+Global Residual STV k=1,total_duration,0.3452834572186556,31,dataset_2,3,0.3452834572186556
+Global Residual STV k=1,max_span_duration,0.33511999031589645,31,dataset_2,3,0.33511999031589645
+Global Residual STV k=1,mean_span_duration,0.28596909417992616,31,dataset_2,3,0.28596909417992616
+Global Weighted Residual STV k=1,num_spans,0.3781004721897393,31,dataset_2,3,0.3781004721897393
+Global Weighted Residual STV k=1,num_services,0.3946843225984237,31,dataset_2,3,0.3946843225984237
+Global Weighted Residual STV k=1,total_duration,0.4064970708199531,31,dataset_2,3,0.4064970708199531
+Global Weighted Residual STV k=1,max_span_duration,0.35476023423111025,31,dataset_2,3,0.35476023423111025
+Global Weighted Residual STV k=1,mean_span_duration,0.13832398032365642,31,dataset_2,3,0.13832398032365642
+Request-Aware Weighted Residual STV k=1,num_spans,0.37777820409144786,31,dataset_2,3,0.37777820409144786
+Request-Aware Weighted Residual STV k=1,num_services,0.39321336716954236,31,dataset_2,3,0.39321336716954236
+Request-Aware Weighted Residual STV k=1,total_duration,0.40540433059923087,31,dataset_2,3,0.40540433059923087
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.3545832004933651,31,dataset_2,3,0.3545832004933651
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.13507775530745425,31,dataset_2,3,0.13507775530745425
+Baseline STV + IF,num_spans,0.926990025436347,56,dataset_3,3,0.926990025436347
+Baseline STV + IF,num_services,0.9597053590104999,56,dataset_3,3,0.9597053590104999
+Baseline STV + IF,total_duration,0.740226801366986,56,dataset_3,3,0.740226801366986
+Baseline STV + IF,max_span_duration,0.4031961051920562,56,dataset_3,3,0.4031961051920562
+Baseline STV + IF,mean_span_duration,0.004252153616694269,56,dataset_3,3,0.004252153616694269
+Enhanced STV + IF,num_spans,0.9074290849592667,56,dataset_3,3,0.9074290849592667
+Enhanced STV + IF,num_services,0.936456830601902,56,dataset_3,3,0.936456830601902
+Enhanced STV + IF,total_duration,0.6716635400471586,56,dataset_3,3,0.6716635400471586
+Enhanced STV + IF,max_span_duration,0.3438726522561925,56,dataset_3,3,0.3438726522561925
+Enhanced STV + IF,mean_span_duration,-0.04984255331470657,56,dataset_3,3,0.04984255331470657
+Global Residual STV k=1,num_spans,0.35168784924753255,56,dataset_3,3,0.35168784924753255
+Global Residual STV k=1,num_services,0.335169561610918,56,dataset_3,3,0.335169561610918
+Global Residual STV k=1,total_duration,0.5111193168632884,56,dataset_3,3,0.5111193168632884
+Global Residual STV k=1,max_span_duration,0.5073227709660768,56,dataset_3,3,0.5073227709660768
+Global Residual STV k=1,mean_span_duration,0.2877243345638136,56,dataset_3,3,0.2877243345638136
+Global Weighted Residual STV k=1,num_spans,0.1469691717381787,56,dataset_3,3,0.1469691717381787
+Global Weighted Residual STV k=1,num_services,0.15771739249608577,56,dataset_3,3,0.15771739249608577
+Global Weighted Residual STV k=1,total_duration,0.3780787120492076,56,dataset_3,3,0.3780787120492076
+Global Weighted Residual STV k=1,max_span_duration,0.4880812248005821,56,dataset_3,3,0.4880812248005821
+Global Weighted Residual STV k=1,mean_span_duration,0.3537895941229075,56,dataset_3,3,0.3537895941229075
+Request-Aware Weighted Residual STV k=1,num_spans,0.08812824357207334,56,dataset_3,3,0.08812824357207334
+Request-Aware Weighted Residual STV k=1,num_services,0.12122153243519458,56,dataset_3,3,0.12122153243519458
+Request-Aware Weighted Residual STV k=1,total_duration,0.2715444938815064,56,dataset_3,3,0.2715444938815064
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.36469732547119943,56,dataset_3,3,0.36469732547119943
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.2637527588530693,56,dataset_3,3,0.2637527588530693
+Baseline STV + IF,num_spans,0.7681359049329675,95,dataset_1,4,0.7681359049329675
+Baseline STV + IF,num_services,0.9495601011018704,95,dataset_1,4,0.9495601011018704
+Baseline STV + IF,total_duration,0.8572759507894059,95,dataset_1,4,0.8572759507894059
+Baseline STV + IF,max_span_duration,0.6611260937607834,95,dataset_1,4,0.6611260937607834
+Baseline STV + IF,mean_span_duration,0.012266260221808226,95,dataset_1,4,0.012266260221808226
+Enhanced STV + IF,num_spans,0.6771951907001631,95,dataset_1,4,0.6771951907001631
+Enhanced STV + IF,num_services,0.9124234526339176,95,dataset_1,4,0.9124234526339176
+Enhanced STV + IF,total_duration,0.8159624943008115,95,dataset_1,4,0.8159624943008115
+Enhanced STV + IF,max_span_duration,0.5929562752897024,95,dataset_1,4,0.5929562752897024
+Enhanced STV + IF,mean_span_duration,-0.03787656248163838,95,dataset_1,4,0.03787656248163838
+Global Residual STV k=1,num_spans,0.19680651561842616,95,dataset_1,4,0.19680651561842616
+Global Residual STV k=1,num_services,0.35753854570210347,95,dataset_1,4,0.35753854570210347
+Global Residual STV k=1,total_duration,0.3287322650245304,95,dataset_1,4,0.3287322650245304
+Global Residual STV k=1,max_span_duration,0.3804379356821028,95,dataset_1,4,0.3804379356821028
+Global Residual STV k=1,mean_span_duration,0.17172203737162628,95,dataset_1,4,0.17172203737162628
+Global Weighted Residual STV k=1,num_spans,0.18621287537121084,95,dataset_1,4,0.18621287537121084
+Global Weighted Residual STV k=1,num_services,0.3212441608827377,95,dataset_1,4,0.3212441608827377
+Global Weighted Residual STV k=1,total_duration,0.21972223900664514,95,dataset_1,4,0.21972223900664514
+Global Weighted Residual STV k=1,max_span_duration,0.2606642604298613,95,dataset_1,4,0.2606642604298613
+Global Weighted Residual STV k=1,mean_span_duration,0.1046438362868961,95,dataset_1,4,0.1046438362868961
+Request-Aware Weighted Residual STV k=1,num_spans,0.16602667036953797,95,dataset_1,4,0.16602667036953797
+Request-Aware Weighted Residual STV k=1,num_services,0.28714582265555444,95,dataset_1,4,0.28714582265555444
+Request-Aware Weighted Residual STV k=1,total_duration,0.20698382609860455,95,dataset_1,4,0.20698382609860455
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.2668122345092155,95,dataset_1,4,0.2668122345092155
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.1590398517840592,95,dataset_1,4,0.1590398517840592
+Baseline STV + IF,num_spans,-0.08863396175388802,31,dataset_2,4,0.08863396175388802
+Baseline STV + IF,num_services,0.029083403290575623,31,dataset_2,4,0.029083403290575623
+Baseline STV + IF,total_duration,-0.04385738646879112,31,dataset_2,4,0.04385738646879112
+Baseline STV + IF,max_span_duration,-0.07049804066274211,31,dataset_2,4,0.07049804066274211
+Baseline STV + IF,mean_span_duration,-0.05225027658976307,31,dataset_2,4,0.05225027658976307
+Enhanced STV + IF,num_spans,0.03638166872729923,31,dataset_2,4,0.03638166872729923
+Enhanced STV + IF,num_services,0.16028269081632657,31,dataset_2,4,0.16028269081632657
+Enhanced STV + IF,total_duration,0.05909527886907993,31,dataset_2,4,0.05909527886907993
+Enhanced STV + IF,max_span_duration,0.028615174570950416,31,dataset_2,4,0.028615174570950416
+Enhanced STV + IF,mean_span_duration,-0.042259138156722914,31,dataset_2,4,0.042259138156722914
+Global Residual STV k=1,num_spans,-0.11378523577227188,31,dataset_2,4,0.11378523577227188
+Global Residual STV k=1,num_services,-0.046317503754264355,31,dataset_2,4,0.046317503754264355
+Global Residual STV k=1,total_duration,0.1443273321040966,31,dataset_2,4,0.1443273321040966
+Global Residual STV k=1,max_span_duration,0.3256145971797326,31,dataset_2,4,0.3256145971797326
+Global Residual STV k=1,mean_span_duration,0.48560758206155347,31,dataset_2,4,0.48560758206155347
+Global Weighted Residual STV k=1,num_spans,-0.09728879989928087,31,dataset_2,4,0.09728879989928087
+Global Weighted Residual STV k=1,num_services,0.00819002063677299,31,dataset_2,4,0.00819002063677299
+Global Weighted Residual STV k=1,total_duration,0.18938722259920054,31,dataset_2,4,0.18938722259920054
+Global Weighted Residual STV k=1,max_span_duration,0.3230411380884182,31,dataset_2,4,0.3230411380884182
+Global Weighted Residual STV k=1,mean_span_duration,0.38306125212730263,31,dataset_2,4,0.38306125212730263
+Request-Aware Weighted Residual STV k=1,num_spans,-0.09547870736997732,31,dataset_2,4,0.09547870736997732
+Request-Aware Weighted Residual STV k=1,num_services,0.00896423255928114,31,dataset_2,4,0.00896423255928114
+Request-Aware Weighted Residual STV k=1,total_duration,0.19006077689736697,31,dataset_2,4,0.19006077689736697
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.3243807847285981,31,dataset_2,4,0.3243807847285981
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.38202782907557936,31,dataset_2,4,0.38202782907557936
+Baseline STV + IF,num_spans,0.9654551207894573,56,dataset_3,4,0.9654551207894573
+Baseline STV + IF,num_services,0.9739969325160536,56,dataset_3,4,0.9739969325160536
+Baseline STV + IF,total_duration,0.7839965931731888,56,dataset_3,4,0.7839965931731888
+Baseline STV + IF,max_span_duration,0.8176459874622308,56,dataset_3,4,0.8176459874622308
+Baseline STV + IF,mean_span_duration,0.11864539081830094,56,dataset_3,4,0.11864539081830094
+Enhanced STV + IF,num_spans,0.9674986726197977,56,dataset_3,4,0.9674986726197977
+Enhanced STV + IF,num_services,0.971043452063354,56,dataset_3,4,0.971043452063354
+Enhanced STV + IF,total_duration,0.7732118496446205,56,dataset_3,4,0.7732118496446205
+Enhanced STV + IF,max_span_duration,0.812754921425688,56,dataset_3,4,0.812754921425688
+Enhanced STV + IF,mean_span_duration,0.14099453882807653,56,dataset_3,4,0.14099453882807653
+Global Residual STV k=1,num_spans,0.49069240761110666,56,dataset_3,4,0.49069240761110666
+Global Residual STV k=1,num_services,0.5127921569870222,56,dataset_3,4,0.5127921569870222
+Global Residual STV k=1,total_duration,0.5141023310446609,56,dataset_3,4,0.5141023310446609
+Global Residual STV k=1,max_span_duration,0.5652810970264398,56,dataset_3,4,0.5652810970264398
+Global Residual STV k=1,mean_span_duration,0.4228287992305991,56,dataset_3,4,0.4228287992305991
+Global Weighted Residual STV k=1,num_spans,0.22739984111049796,56,dataset_3,4,0.22739984111049796
+Global Weighted Residual STV k=1,num_services,0.27020726460423855,56,dataset_3,4,0.27020726460423855
+Global Weighted Residual STV k=1,total_duration,0.24374295796164472,56,dataset_3,4,0.24374295796164472
+Global Weighted Residual STV k=1,max_span_duration,0.29151629502129106,56,dataset_3,4,0.29151629502129106
+Global Weighted Residual STV k=1,mean_span_duration,0.40626365267009884,56,dataset_3,4,0.40626365267009884
+Request-Aware Weighted Residual STV k=1,num_spans,0.2213739509034537,56,dataset_3,4,0.2213739509034537
+Request-Aware Weighted Residual STV k=1,num_services,0.2675904313509652,56,dataset_3,4,0.2675904313509652
+Request-Aware Weighted Residual STV k=1,total_duration,0.23824791103359585,56,dataset_3,4,0.23824791103359585
+Request-Aware Weighted Residual STV k=1,max_span_duration,0.28463668376905976,56,dataset_3,4,0.28463668376905976
+Request-Aware Weighted Residual STV k=1,mean_span_duration,0.39855431614283476,56,dataset_3,4,0.39855431614283476

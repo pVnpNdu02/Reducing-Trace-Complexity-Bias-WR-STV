@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Latency distribution shift vs.\ cross-dataset transfer performance
+(shared STV-visible features between train and test).}
+\label{tab:distribution-shift}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Train $\rightarrow$ Test} & \textbf{Wtd.\ mean Wasserstein} & \textbf{$p_{90}$ std.\ shift} & \textbf{ROC-AUC} \\
+\midrule
+Dataset 2 $\rightarrow$ Dataset 1 & 0.973 & 2.737 & 0.611 \\
+Dataset 1 $\rightarrow$ Dataset 3 & 0.872 & 1.515 & 0.891 \\
+Dataset 1 $\rightarrow$ Dataset 2 & 0.772 & 1.707 & 0.891 \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\footnotesize
+Spearman correlation ($p_{90}$ standardized shift vs.\ ROC-AUC, all 6
+directed pairs): $r = -0.829$, $p = 0.0416$. \textbf{Report as exploratory}
+-- $n=6$ pairs are drawn from only 3 underlying datasets and are not
+independent samples; do not present this $p$-value as confirmatory.
+\end{table}

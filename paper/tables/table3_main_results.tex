@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Main detection results: baseline vs.\ WR-STV, largest-visible
+injection ($f=30$, $m=3$), mean over datasets/seeds.}
+\label{tab:main-results}
+\begin{tabular}{lccc}
+\toprule
+& \textbf{ROC-AUC} & \textbf{AUPRC} & \textbf{F1} \\
+\midrule
+\multicolumn{4}{l}{\textit{Within-dataset}} \\
+Baseline STV + IF & 0.605 & 0.574 & 0.583 \\
+\textbf{WR-STV ($k$=1, $C$=5)} & \textbf{0.814} & \textbf{0.812} & \textbf{0.738} \\
+\midrule
+\multicolumn{4}{l}{\textit{Cross-dataset (6 directed pairs)}} \\
+Baseline STV + IF & 0.622 & 0.573 & 0.602 \\
+\textbf{WR-STV ($k$=1, $C$=5)} & \textbf{0.803} & \textbf{0.804} & \textbf{0.722} \\
+\bottomrule
+\end{tabular}
+\end{table}

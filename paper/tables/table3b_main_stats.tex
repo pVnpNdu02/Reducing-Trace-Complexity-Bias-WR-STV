@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Paired statistical tests, WR-STV vs.\ baseline STV~+~IF.}
+\label{tab:main-stats}
+\begin{tabular}{lcccc}
+\toprule
+& \textbf{Gain} & \textbf{Cohen's $d_z$} & \textbf{paired-$t$ $p$} & \textbf{Wilcoxon $p$} \\
+\midrule
+\multicolumn{5}{l}{\textit{Within-dataset (n=15 seed$\times$dataset rows)}} \\
+ROC-AUC & +0.209 & 2.78 & $3.68 \times 10^{-8}$ & $6.1 \times 10^{-5}$ \\
+AUPRC   & +0.237 & --   & --                     & -- \\
+F1      & +0.155 & --   & --                     & -- \\
+\midrule
+\multicolumn{5}{l}{\textit{Cross-dataset (n=6 directed pairs)}} \\
+ROC-AUC & +0.182 & 1.92 & $0.0053$ & $0.03125$ \\
+AUPRC   & +0.231 & --   & --       & $0.03125$ \\
+F1      & +0.120 & --   & --       & $0.03125$ \\
+\bottomrule
+\end{tabular}
+\end{table}
