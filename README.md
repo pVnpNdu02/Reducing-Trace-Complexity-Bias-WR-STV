@@ -55,7 +55,7 @@ If you use this code or data, please cite:
 
 ```bibtex
 @inproceedings{ramina2026wrstv,
-  author    = {Ramina, Pavan Kumar},
+  author    = {Pavan Kumar Ramina}, {Murali Krishna Enduri}
   title     = {Reducing Trace-Complexity Bias in Microservice Anomaly Scoring via Weighted Residual Service Trace Vectors},
   year      = {2026}
 }
@@ -71,3 +71,4 @@ TrainTicket benchmark is subject to TrainTicket's own license terms.
 ## Contact
 
 Pavan Kumar Ramina — pavankumar_ramina@srmap.edu.in
+Murali Krishna Enduri - muralikrishna.e@srmap.edu.in
