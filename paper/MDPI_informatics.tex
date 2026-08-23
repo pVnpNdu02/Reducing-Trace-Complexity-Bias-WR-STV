@@ -1248,20 +1248,20 @@ this work, WR-STV also offers practical scoring advantages.
 		\toprule
 		\textbf{Method} & \textbf{Total (s)} & \textbf{Per-trace scoring (ms)} \\
 		\midrule
-		\textbf{WR-STV}    & \textbf{0.171} & \textbf{0.0238} \\
+		\textbf{WR-STV}    & \textbf{0.171} & \textbf{0.022} \\
 		Enhanced STV + IF  & 0.576 & 0.3627 \\
 		Baseline STV + IF  & 0.607 & 0.3647 \\
 		\bottomrule
 	\end{tabular}
-	WR-STV is $\approx$3.5$\times$ faster end-to-end and $\approx$15$\times$
+	WR-STV is $\approx$3.5$\times$ faster end-to-end and $\approx$16$\times$
 	faster per-trace than Isolation Forest-based baselines. Memory footprint is
 	negligible for all methods at this dataset scale and is not a
 	differentiator; report it in one sentence in text, not as a table.
 \end{table}
 Table~\ref{tab:runtime} shows that WR-STV requires approximately
-\(0.0238\)\,ms per trace, compared with approximately \(0.36\)\,ms for
+\(0.022\)\,ms per trace, compared with approximately \(0.36\)\,ms for
 Isolation Forest-based baselines, corresponding to roughly a
-\(15\times\) reduction in scoring time. This improvement is expected
+\(16\times\) reduction in scoring time. This improvement is expected
 because WR-STV performs lightweight statistical computations using
 precomputed feature statistics and avoids ensemble-tree inference during
 deployment. Consequently, WR-STV has favorable computational properties
