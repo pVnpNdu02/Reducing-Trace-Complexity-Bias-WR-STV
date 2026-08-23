@@ -31,7 +31,7 @@ cross-dataset transfer, distribution-shift analysis, explainability overlap,
 failure categorization, runtime benchmarks, and hyperparameter validation.
 
 `paper_experiment_results/paper_final_tables/` contains the exact CSVs used
-to generate every table in the paper (`paper/tables/*.tex`).
+for the results reported in the paper.
 
 ## Regenerating from scratch
 

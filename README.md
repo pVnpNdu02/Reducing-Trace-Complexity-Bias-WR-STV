@@ -23,7 +23,7 @@ notebooks/    Full experiment pipeline (data loading -> STV construction ->
               WR-STV -> baselines -> evaluation -> statistical tests)
 data/         Processed TrainTicket traces/metrics and all experiment result
               CSVs (see data/README.md for provenance)
-paper/        LaTeX source for the paper (IEEEtran), tables, and figures
+paper/        LaTeX source for the MDPI Informatics journal submission
 figures/      Standalone diagram sources (pipeline figure, etc.)
 ```
 
@@ -39,8 +39,7 @@ figures/      Standalone diagram sources (pipeline figure, etc.)
    a path configured in the first cell — update that path if you relocate the
    data.
 4. Run all cells top to bottom. Each experiment section prints/saves its
-   result table to `data/paper_experiment_results/paper_final_tables/`,
-   matching the tables in `paper/tables/`.
+   result table to `data/paper_experiment_results/paper_final_tables/`.
 
 ## Dataset
 

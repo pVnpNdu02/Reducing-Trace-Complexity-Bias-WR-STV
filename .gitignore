@@ -10,3 +10,4 @@ venv/
 *.bbl
 *.blg
 *.synctex.gz
+/PUBLICATION_AUDIT_FULL.md

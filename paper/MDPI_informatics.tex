@@ -996,8 +996,14 @@ unsupervised detector with another. Standardizing each service-path
 feature relative to its learned latency distribution produces a scoring
 space that is substantially less influenced by trace structural
 complexity, allowing latency deviations to be identified more
-consistently across heterogeneous traces.
-\input\begin{table}[t]
+consistently across heterogeneous traces. The ablation results should
+be interpreted as evidence for residual normalization as the primary
+component: the additional reliability weighting is metric-dependent
+and is not statistically significant for ROC-AUC or F1 in the reported
+comparison. The reported $p$-values are exploratory and are not
+adjusted for the multiple comparisons across metrics, methods, and
+transfer pairs.
+\begin{table}[t]
 	\centering
 	\caption{Detection performance vs.\ classical baselines, random-visible
 		injection ($f=30$), mean ROC-AUC.}
@@ -1114,10 +1120,12 @@ anomalies, limitations discussed further in Section~\ref{sec:threats}.
 \end{table}
 
 
-Table~\ref{tab:cross-pairs} reports all six directed train-test pairs.
-Transfer is strong for five of the six pairs, with ROC-AUC values of at
-least \(0.87\), but weak for Dataset~2~\(\rightarrow\)~Dataset~1
-(ROC-AUC \(0.611\)). We checked whether this degradation is explained by
+Table~\ref{tab:cross-pairs} reports all six directed train--test pairs.
+Transfer performance varies across pairs, with ROC-AUC ranging from
+\(0.611\) to \(0.891\). The strongest transfer is observed for
+Dataset~1~\(\rightarrow\)~Dataset~2 and Dataset~1~\(\rightarrow\)~Dataset~3
+(both \(0.891\)), while the weakest transfer occurs for
+Dataset~2~\(\rightarrow\)~Dataset~1 (\(0.611\)). We checked whether this degradation is explained by
 unseen service paths at test time and found that \(97.8\%\) of
 test-trace STV-visible events were covered by the Dataset~2 training
 vocabulary. This suggests that the weak transfer pair is not primarily a
@@ -1240,9 +1248,9 @@ this work, WR-STV also offers practical scoring advantages.
 		\toprule
 		\textbf{Method} & \textbf{Total (s)} & \textbf{Per-trace scoring (ms)} \\
 		\midrule
-		\textbf{WR-STV}    & \textbf{0.153} & \textbf{0.0238} \\
-		Enhanced STV + IF  & 0.537 & 0.3627 \\
-		Baseline STV + IF  & 0.551 & 0.3647 \\
+		\textbf{WR-STV}    & \textbf{0.171} & \textbf{0.0238} \\
+		Enhanced STV + IF  & 0.576 & 0.3627 \\
+		Baseline STV + IF  & 0.607 & 0.3647 \\
 		\bottomrule
 	\end{tabular}
 	WR-STV is $\approx$3.5$\times$ faster end-to-end and $\approx$15$\times$
@@ -1251,9 +1259,9 @@ this work, WR-STV also offers practical scoring advantages.
 	differentiator; report it in one sentence in text, not as a table.
 \end{table}
 Table~\ref{tab:runtime} shows that WR-STV requires approximately
-\(0.022\)\,ms per trace, compared with approximately \(0.36\)\,ms for
+\(0.0238\)\,ms per trace, compared with approximately \(0.36\)\,ms for
 Isolation Forest-based baselines, corresponding to roughly a
-\(16\times\) reduction in inference time. This improvement is expected
+\(15\times\) reduction in scoring time. This improvement is expected
 because WR-STV performs lightweight statistical computations using
 precomputed feature statistics and avoids ensemble-tree inference during
 deployment. Consequently, WR-STV has favorable computational properties
@@ -1357,10 +1365,13 @@ correlation between anomaly score and trace complexity
 (\(r \approx 0.30\)) while improving controlled STV-visible latency
 anomaly ranking over baseline STV~+~Isolation Forest
 (within-dataset ROC-AUC \(0.605 \rightarrow 0.814\)). Cross-dataset
-experiments also show promising transfer behavior
-(\(0.622 \rightarrow 0.803\)), although these results should be
-interpreted cautiously because they are based on only six directed
-train-test pairs.
+experiments show dataset-dependent transfer behavior, improving the
+six-pair mean from \(0.622\) to \(0.803\), with pairwise ROC-AUC values
+from $0.611$ to $0.891$. These results should be interpreted cautiously
+because they are based on only six directed train-test pairs from one
+benchmark service. In particular, Dataset~2~$\rightarrow$~Dataset~1
+is weak ($0.611$), despite stronger transfer when Dataset~1 is the
+training source.
 
 The ablation results indicate that most of the improvement comes from
 feature-wise residual normalization, while the proposed reliability
@@ -1368,7 +1379,7 @@ weighting contributes a smaller, metric-dependent refinement. WR-STV
 also provides interpretable service-path-level evidence, with top-3
 contributing service paths recovering more than \(90\%\) of known
 injected paths in the evaluated setting. Runtime analysis further shows
-that WR-STV achieves roughly a \(16\times\) lower per-trace scoring time
+that WR-STV achieves roughly a \(15\times\) lower per-trace scoring time
 than Isolation Forest-based baselines. Overall, the results support
 WR-STV as a lightweight and interpretable approach for reducing
 trace-complexity bias in controlled STV-visible latency anomaly scoring,
