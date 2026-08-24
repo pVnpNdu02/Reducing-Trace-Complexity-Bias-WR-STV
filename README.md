@@ -19,12 +19,21 @@ the baseline.
 ## Repository Structure
 
 ```
-notebooks/    Full experiment pipeline (data loading -> STV construction ->
-              WR-STV -> baselines -> evaluation -> statistical tests)
+notebooks/
+  data_preprocessing.ipynb              Raw TrainTicket capture -> data/
+                                            (requires your own raw capture;
+                                            not needed to reproduce the paper,
+                                            since data/ already ships the output)
+   FINAL_REVISED_ANOMALY_RESEARCH_cleaned_v2.ipynb
+                                            STV construction -> WR-STV ->
+                                            baselines -> evaluation ->
+                                            statistical tests. Runs directly
+                                            on data/ as included in this repo.
 data/         Processed TrainTicket traces/metrics and all experiment result
               CSVs (see data/README.md for provenance)
-paper/        LaTeX source for the MDPI Informatics journal submission
-figures/      Standalone diagram sources (pipeline figure, etc.)
+paper/        LaTeX source for the MDPI Informatics journal submission,
+              including the compiled figures (pipeline diagram, complexity-bias
+              scatter, sensitivity plot) alongside main.tex
 ```
 
 ## Reproducing the Results
@@ -34,12 +43,20 @@ figures/      Standalone diagram sources (pipeline figure, etc.)
    python -m venv venv && source venv/bin/activate
    pip install -r requirements.txt
    ```
-2. Open `notebooks/FINAL_REVISED_ANAMOLY_RESEARCH_cleaned_v2.ipynb` in Jupyter.
-3. The notebook expects the `data/` folder (already included in this repo) at
-   a path configured in the first cell — update that path if you relocate the
-   data.
+2. Open `notebooks/FINAL_REVISED_ANOMALY_RESEARCH_cleaned_v2.ipynb` in Jupyter.
+3. This notebook runs directly against the `data/` folder already included in
+   this repo (no raw data or Google Drive needed) — it defaults to `../data`
+   relative to the notebook, overridable via the `WRSTV_DATA_ROOT` environment
+   variable. (It also auto-detects Google Colab and falls back to mounting
+   Drive if run there.)
 4. Run all cells top to bottom. Each experiment section prints/saves its
    result table to `data/paper_experiment_results/paper_final_tables/`.
+
+`notebooks/data_preprocessing.ipynb` is included for transparency on how
+`data/` itself was produced from the raw TrainTicket deployment capture (logs,
+Prometheus metrics, Jaeger traces). It is **not** required to reproduce the
+paper's results — only to regenerate `data/` from a fresh deployment, which
+requires your own raw capture (see `data/README.md`).
 
 ## Dataset
 

@@ -1,9 +1,25 @@
 # Data
 
-## Provenance
+## What the released pipeline actually uses
 
-Three TrainTicket microservice benchmark trace sets, each a distinct
-configuration/version variant of `ts-order-service`:
+The notebook (`notebooks/FINAL_REVISED_ANOMALY_RESEARCH_cleaned_v2.ipynb`) reads
+exactly **one** file per dataset as its input:
+
+```
+data/dataset_1/spans_long.parquet
+data/dataset_2/spans_long.parquet
+data/dataset_3/spans_long.parquet
+```
+
+Every table and figure in the paper is derived from these three files via the
+pipeline described in the notebook (STV construction → per-feature training
+statistics → residual normalization → reliability weighting → top-k
+aggregation → baselines → statistical tests).
+
+Each `spans_long.parquet` contains one row per span, with columns for trace ID,
+span ID, service, operation, root-to-node service path, start time, and
+duration, reconstructed from the three TrainTicket configuration variants of
+`ts-order-service`:
 
 | Folder | Configuration |
 |---|---|
@@ -11,9 +27,29 @@ configuration/version variant of `ts-order-service`:
 | `dataset_2/` | `ts-order-service_mongodb_4.4.15` |
 | `dataset_3/` | `ts-order-service_3.0.4-mongodb-driver` |
 
-Each dataset folder contains parsed span-level trace data (`logs_clean.parquet`)
-and per-container resource metrics (`metrics/`) collected from the running
-benchmark deployment.
+## Other files present in `data/dataset_*/`
+
+`logs_clean.parquet`, `spans_enriched.parquet`, `traces_flat.parquet`,
+`baseline_stv.npy`, `baseline_stv_trace_ids.csv`, and `metrics/*.parquet`
+(per-container CPU/memory/network time series) are produced by
+`notebooks/data_preprocessing.ipynb` (see below) from the raw TrainTicket
+deployment capture. **They are included for transparency but are not read by
+the main analysis notebook** — the entire reported pipeline runs on
+`spans_long.parquet` alone.
+
+## Other files present in `data/paper_experiment_results/`
+
+Most CSVs here are written directly by
+`notebooks/FINAL_REVISED_ANOMALY_RESEARCH_cleaned_v2.ipynb`. A handful
+(`multi_seed_all_results.csv`, `multi_seed_summary_by_method.csv`,
+`multi_seed_summary_by_dataset_method.csv`, `all_dataset_synthetic_v2_results.csv`,
+`summary_synthetic_v2_results.csv`) are carried over from an earlier full run
+of the same underlying experiment code, prior to the notebook being trimmed
+down to the version in this repo. We verified their reported values (e.g.,
+per-method ROC-AUC means) are numerically identical to the equivalent, currently
+regenerated files (`paper_key_methods_summary_clean.csv`,
+`*_clean_pipeline.csv`) — they are kept for traceability, not because the
+released notebook regenerates them under those exact filenames.
 
 ## Trace-graph quality (verified before modeling)
 
@@ -35,7 +71,15 @@ for the results reported in the paper.
 
 ## Regenerating from scratch
 
-The raw TrainTicket deployment logs/traces are not included here (only the
-already-parsed, cleaned parquet files are, since they're what the pipeline
-consumes directly). To regenerate from a fresh TrainTicket deployment, see
-the data-collection cells at the top of the notebook.
+`notebooks/data_preprocessing.ipynb` parses the raw TrainTicket deployment
+capture (structured logs, Prometheus metric JSON, Jaeger trace JSON) into
+every file under `data/dataset_*/`, including `spans_long.parquet`. The raw
+deployment capture itself is **not included in this repository** — only its
+processed output (`data/`) is. To re-run preprocessing from scratch, you need
+your own raw TrainTicket capture in the layout documented at the top of that
+notebook; point it at `WRSTV_RAW_DATA_ROOT` (or run in Colab with the data in
+your own Drive). The main analysis notebook
+(`FINAL_REVISED_ANOMALY_RESEARCH_cleaned_v2.ipynb`) picks up from
+`spans_long.parquet` onward and runs directly on the `data/` folder already
+included in this repo — no raw capture needed to reproduce the paper's
+reported results.
