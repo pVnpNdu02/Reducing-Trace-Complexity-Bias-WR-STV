@@ -1,6 +1,6 @@
 %=================================================================
-\documentclass[informatics,article,submit,moreauthors]{Definitions/mdpi} 
-%\documentclass[preprints,article,submit,moreauthors]{Definitions/mdpi} 
+\documentclass[informatics,article,submit,moreauthors]{Definitions/mdpi}
+%\documentclass[preprints,article,submit,moreauthors]{Definitions/mdpi}
 % For posting an early version of this manuscript as a preprint, you may use "preprints" as the journal. Changing "submit" to "accept" before posting will remove line numbers.
 
 % Below journals will use APA reference format:
@@ -11,9 +11,9 @@
 
 %=================================================================
 % MDPI internal commands - do not modify
-\firstpage{1} 
-\makeatletter 
-\setcounter{page}{\@firstpage} 
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
 \makeatother
 \pubvolume{1}
 \issuenum{1}
@@ -21,10 +21,10 @@
 \pubyear{2026}
 \copyrightyear{2026}
 %\externaleditor{Firstname Lastname}
-\datereceived{ } 
+\datereceived{ }
 \daterevised{ }
-\dateaccepted{ } 
-\datepublished{ } 
+\dateaccepted{ }
+\datepublished{ }
 %\datecorrected{}
 %\dateretracted{}
 %\doinum{}
@@ -71,6 +71,14 @@
 % \renewcommand{\expnote}[1]{}   % <-- uncomment both to hide all notes
 % \renewcommand{\authnote}[1]{}
 
+% Revision-marking command (MISSING in the version supplied for review --
+% \rev{} is used throughout the body but was never defined, so this file
+% did not compile as received. Added here; remove/comment before
+% generating the final clean copy for submission.)
+\usepackage{xcolor}
+\definecolor{revisionblue}{RGB}{0,70,160}
+\newcommand{\rev}[1]{{\color{revisionblue}#1}}
+
 
 
 %=================================================================
@@ -81,9 +89,7 @@
 % Full title of the paper (Capitalized)
 \Title{Reducing Trace-Complexity Bias in Microservice Anomaly Scoring via Weighted Residual Service Trace Vectors}
 
-% Author Orchid ID: enter ID or remove command
-%\newcommand{\orcidauthorA}{} 
-\newcommand{\orcidauthorB}{0000-0002-9029-2187} 
+\newcommand{\orcidauthorB}{0000-0002-9029-2187}
 
 
 % Authors, for the paper (add full first names)
@@ -103,34 +109,11 @@ Department of Computer Science and Engineering, SRM University-AP, Amaravati 522
 
 % Contact information of the corresponding author
 \corres{Correspondence: muralikrishna.e@srmap.edu.in}
- 
-\abstract{Distributed trace anomaly scoring commonly represents each trace as a
-	Service Trace Vector (STV), where features correspond to service call
-	paths and values encode latency. However, raw STV-based scoring can be
-	strongly influenced by trace structural complexity. In this paper, we
-	show empirically on three TrainTicket configurations of
-	\texttt{ts-order-service} that baseline STV~+~Isolation Forest scores
-	correlate strongly with trace size, with correlations of approximately
-	\(r=0.85\)--\(0.98\) for span and service-count based complexity
-	measures. We propose WR-STV, a lightweight STV-based anomaly scoring
-	method that replaces raw feature scoring with clipped standardized
-	residuals, applies log-frequency reliability weighting, and aggregates
-	the top-\(k\) weighted residual contributors into a trace-level score.
-	On held-out non-injected traces, WR-STV reduces the measured
-	score-complexity correlation from approximately \(r=0.87\) to
-	\(r=0.30\). Under controlled STV-visible latency injection, WR-STV
-	improves within-dataset ROC-AUC from \(0.605\) to \(0.814\), with
-	random-visible injection used to test whether the improvement depends
-	on perturbing only high-duration spans. Additional baseline comparisons
-	indicate that residual normalization accounts for most of the gain,
-	while reliability weighting provides a smaller, metric-dependent
-	refinement. WR-STV also provides interpretable service-path-level
-	evidence and lightweight per-trace scoring. The evaluation is scoped to
-	synthetic latency perturbations on three configurations of one
-	benchmark service.}
+
+\abstract{\rev{Distributed trace anomaly scoring must distinguish unusual service-path latency behavior from structural differences among traces. However, raw Service Trace Vector (STV) scores may increase with trace size and feature occupancy, potentially prioritizing structurally larger traces even when no anomaly has been injected. We evaluate this structural score dependence on held-out, non-injected traces from three TrainTicket configurations using five train--test splits per configuration. Raw STV~+~Isolation Forest scores show strong mean Pearson correlations with service count (\(r=0.868\)), span count (\(r=0.820\)), and the number of observed STV features (\(r=0.960\)). Local Outlier Factor closely reproduces this dependence, whereas One-Class SVM reduces its Pearson magnitude, indicating a representation--scorer interaction rather than an effect specific to Isolation Forest. We propose WR-STV, which applies clipped feature-wise standardized residuals and log-frequency reliability weighting. Validation selects \(k=1\); therefore, the final configuration scores each trace using its maximum reliability-weighted residual. WR-STV reduces the mean Pearson correlations with service and span count to \(0.296\) and \(0.238\), respectively. Under the original controlled \(30\times\), three-span perturbation setting, WR-STV improves within-dataset ROC-AUC from \(0.605\) to \(0.814\). An expanded \(1.10\times\)--\(30\times\) study shows that subtle perturbations remain difficult and that ranking performance generally increases with severity. WR-STV requires approximately \(0.022\) ms of mean batched scoring time per trace, approximately \(16\times\) lower than the evaluated Isolation Forest baselines. These results support WR-STV for reducing structural score dependence in controlled STV-visible latency ranking; they do not establish performance for naturally occurring incidents or non-latency anomaly types.}}
 
 % Keywords
-\keyword{Microservices; Distributed Tracing;  Anomaly Detection; Service Trace Vector; Residual Normalization;  Trace Complexity Bias; Explainability.} 
+\keyword{Microservices; Distributed Tracing;  Anomaly Detection; Service Trace Vector; Residual Normalization;  Trace Complexity Bias; Explainability.}
 
 % The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
 %\PACS{J0101}
@@ -165,7 +148,7 @@ learning-based trace anomaly detection methods that model the
 characteristics of normal trace executions and automatically identify
 traces whose behavior deviates from the learned patterns, allowing
 operators to prioritize investigation without continually redesigning
-rule sets. 
+rule sets.
 % ------------------------------------------------------------
 % Paragraph 3 -- Existing methods and the STV representation
 % ------------------------------------------------------------
@@ -173,7 +156,7 @@ Learning-based trace anomaly detection depends heavily on how
 distributed traces are represented for machine learning. Previous
 studies have explored execution sequences, graph-based models,
 learned embeddings, and fixed-dimensional vector representations \cite{liu2020traceanomaly,zhang2022deeptralog,xie2023tracevae}. Among these, the Service Trace Vector (STV), introduced in
-TraceAnomaly \cite{liu2020traceanomaly}, transforms variable-length
+TraceAnomaly \cite{liu2020traceanomaly, wei2025traloganomaly}, transforms variable-length
 distributed traces into fixed-dimensional feature vectors suitable for
 machine learning. In an STV, each feature corresponds to a specific
 service reached through a particular call path, while its value
@@ -187,73 +170,61 @@ range of conventional statistical and machine learning techniques,
 making them a flexible representation for trace anomaly detection.
 However, the effectiveness of such approaches depends not only on the
 trace representation itself, but also on how anomaly scores are
-derived from the resulting feature vectors.Existing STV- and graph-based approaches have demonstrated strong anomaly detection performance across several benchmark microservice datasets. However, comparatively little attention has been given to understanding whether the anomaly scores produced by these methods are influenced by intrinsic structural properties of traces, such as execution size or call-path complexity.
+derived from the resulting feature vectors. Existing STV- and graph-based approaches have demonstrated strong anomaly detection performance across several benchmark microservice datasets. However, comparatively little attention has been given to understanding whether the anomaly scores produced by these methods are influenced by intrinsic structural properties of traces, such as execution size or call-path complexity.
 
 
 % ------------------------------------------------------------
 % Paragraph 4 -- The research gap: complexity bias
 % ------------------------------------------------------------
-We identify a systematic weakness in STV-based anomaly scoring: when an STV
-is scored using a generic unsupervised detector trained directly on raw,
-unnormalized feature values, the resulting anomaly score can become
-strongly influenced by trace \emph{size}, independent of trace
-\emph{health}. To better understand this phenomenon, we analyze real, non-injected
-test traces from three configuration variants of the
-\texttt{ts-order-service} microservice in the TrainTicket benchmark \cite{zhou2021trainticket}.
-Across these datasets, the Pearson correlation between baseline
-STV~+~Isolation Forest anomaly scores and the number of distinct
-services ranges from $r = 0.968$ to $0.982$, while the correlation with
-the number of spans ranges from $r = 0.854$ to $0.981$
-(Table~\ref{tab:complexity-bias-baseline}). Because these measurements are obtained from traces without injected
-anomalies, the observed correlations cannot be explained by successful
-detection of synthetic faults. Instead, they indicate that the structural characteristics of a trace can
-substantially influence anomaly scores even when the observed executions
-are operationally normal. This suggests that anomaly scoring based solely on raw STV feature
-values may find it more difficult to distinguish genuinely abnormal
-executions from structurally complex but otherwise normal traces.
+We identify a systematic weakness in STV-based anomaly scoring: when an STV is scored using a generic unsupervised detector trained directly on raw, unnormalized feature values, the resulting anomaly score can become strongly influenced by trace structural characteristics, potentially obscuring feature-relative latency deviations. To better understand this phenomenon, we analyze held-out, non-injected test traces from three configuration variants of the \texttt{ts-order-service} microservice in the TrainTicket benchmark~\cite{zhou2021trainticket}. Across these datasets, the Pearson correlation between baseline STV~+~Isolation Forest anomaly scores and the number of distinct services ranges from $r = 0.968$ to $0.982$, while the correlation with the number of spans ranges from $r = 0.854$ to $0.981$ (Table~\ref{tab:complexity-bias-baseline}). Because these measurements are obtained from held-out, non-injected traces, the observed correlations cannot be explained by successful detection of synthetic faults. Instead, they indicate that structural properties of a trace can have a substantial influence on anomaly scores. The revised analysis further shows that this relationship is closely reproduced under Local Outlier Factor and remains present, although weaker, under One-Class SVM, suggesting that the phenomenon is not specific to Isolation Forest. These observations motivate a scoring approach that is less dependent on trace structural occupancy while preserving sensitivity to service-path latency deviations.
 % ------------------------------------------------------------
 % Paragraph 5 -- Proposed method
 % ------------------------------------------------------------
-We propose \textbf{WR-STV} (Weighted Residual Service Trace Vector), which
-replaces the raw STV value at each feature with a standardized residual
-against that feature's learned training-time mean and variance, clips the
-residual for numerical stability, weights it by a log-frequency reliability
-term that down-weights rarely observed paths, and scores the trace by the
-mean of its top-$k$ weighted absolute residuals. This keeps the
-representation's per-service-path interpretability while reducing its dependence on trace size (Section~\ref{sec:methodology}).
+\rev{We propose \textbf{WR-STV} (Weighted Residual Service Trace Vector),
+which replaces each observed raw STV value with a clipped standardized
+residual, applies a log-frequency reliability weight, and uses top-$k$
+scoring. Validation selects $k=1$; therefore, the final evaluated
+configuration is a maximum reliability-weighted standardized-residual scorer.
+This design preserves service-path interpretability while reducing structural
+score dependence (Section~\ref{sec:methodology}).}
 
 % ------------------------------------------------------------
 % Contributions
 % ------------------------------------------------------------
 The main contributions of this paper are:
-
 \begin{itemize}
-	\item \textbf{An empirical demonstration of trace-complexity bias} in
-	STV~+~Isolation Forest anomaly scoring, measured directly on real,
-	non-injected test traces from three TrainTicket configurations
-	($r \approx 0.85$--$0.98$ with baseline score; reduced to
-	$r \approx 0.24$--$0.30$ under WR-STV).
-	
-	\item \textbf{Weighted Residual Service Trace Vectors}: a lightweight residual-standardization and
-	reliability-weighting scheme for STV scoring, together with an ablation
-	study isolating how much of its improvement comes from standardization versus
-	weighting.
-	
-	\item \textbf{A controlled, circularity-checked evaluation}: evaluate WR-STV using latency
-	anomalies injected into both the largest-duration visible span and a randomly chosen visible span (robustness check), injection-strength sensitivity, classical  anomaly detection baselines, and cross-dataset transfer across all six directed train/test pairs. Showing that WR-STV's detection improvement is not an artifact of always targeting the feature to which its scoring function is most sensitive.
-	
-	
-	\item \textbf{Quantitative interpretability and failure analysis}:
-	top-$k$ explanation overlap against known injected paths, and a
-	taxonomy of the conditions under which WR-STV fails to rank an injected
-	trace above its original.
-\end{itemize}
+    \item \rev{\textbf{A cross-detector analysis of structural score dependence}
+on held-out, non-injected traces. In addition to service and span counts, the
+revision directly measures STV feature occupancy and evaluates raw STV scoring
+with Isolation Forest, LOF, and One-Class SVM.}
 
+    \item \rev{\textbf{WR-STV}, a lightweight residual-standardization and
+reliability-weighting method. The general formulation supports top-$k$
+aggregation, while validation selects $k=1$, making the final scorer
+max-based.}
+
+    \item \rev{\textbf{An expanded controlled latency-perturbation study}
+covering $f\in\{1.10,1.25,1.50,2,3,5,10,20,30\}$, one and three modified
+spans, and both largest-visible and random-visible selection. This study
+characterizes the method's sensitivity envelope rather than treating only
+large perturbations as representative.}
+
+    \item \textbf{Quantitative interpretability and failure analysis}:
+ranked service-path evidence, overlap against known injected paths, and a
+rule-based descriptive taxonomy of cases in which the injected trace is not
+ranked above its original.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Section 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Related Work}
 \label{sec:related-work}
+
+\rev{This section surveys how prior work represents distributed traces for
+anomaly detection and how it derives anomaly scores from those
+representations, then situates the present paper's focus -- whether the
+scoring process itself is biased by trace structure -- relative to that
+literature.}
 
 \subsection{Distributed Trace Representations}
 
@@ -267,7 +238,7 @@ Service Trace Vector (STV), where features correspond to service call
 paths and values encode latency-related behavior~\cite{liu2020traceanomaly}.
 Graph-based approaches instead preserve more of the trace topology.
 DeepTraLog constructs a trace event graph that combines invocation
-structure with log events~\cite{zhang2022deeptralog}, while TraceVAE
+structure with log events~\cite{zhang2022deeptralog, barata2026anomaly}, while TraceVAE
 models microservice traces using a graph variational autoencoder
 designed for tree-structured trace data~\cite{xie2023tracevae}. Other
 recent approaches incorporate additional telemetry such as profiling
@@ -289,7 +260,7 @@ trace structural complexity.
 
 Early approaches to microservice anomaly detection often relied on
 manually defined rules or service-specific heuristics to identify
-abnormal executions~\cite{liu2020traceanomaly}. As microservice systems
+abnormal executions~\cite{liu2020traceanomaly, khanahmadi2023detection}. As microservice systems
 increased in scale and complexity, these rule-based techniques became
 harder to maintain, motivating learning-based methods that model normal
 trace behavior directly from data. TraceAnomaly learns the distribution
@@ -302,14 +273,14 @@ diagnostic information.
 Subsequent methods improve trace anomaly detection by using richer
 representations or more expressive models. DeepTraLog combines trace and
 log information in a graph neural architecture with a deep support vector
-data description objective~\cite{zhang2022deeptralog}. TraceGra uses
+data description objective~\cite{zhang2022deeptralog, xu2023deep}. TraceGra uses
 graph deep learning to model trace-based anomaly detection in
 microservice systems~\cite{chen2023tracegra}. ServiceAnomaly combines
 distributed traces with profiling metrics in an annotated graph to
 detect abnormal microservice executions~\cite{panahandeh2024serviceanomaly}.
 Recent work has also explored context-aware trace graph embeddings and
 resource-metric autoencoders for anomaly detection and localization
-\cite{alomari2025contextaware,xing2025multidim}.
+\cite{alomari2025contextaware,xing2025multidim, kohyarnejadfard2022anomaly}.
 
 These methods primarily focus on improving anomaly detection accuracy,
 capturing a richer trace structure, or enhancing fault localization. In
@@ -343,6 +314,11 @@ bias and controlled latency-anomaly scoring performance.
 \section{Background and Motivation}
 \label{sec:background}
 
+\rev{This section introduces the distributed-trace and Service Trace Vector
+concepts needed to define trace-complexity bias, then presents the
+empirical baseline evidence for that bias that motivates the WR-STV
+design in Section~\ref{sec:methodology}.}
+
 \subsection{Distributed Traces}
 
 A distributed trace records the end-to-end execution of a single user
@@ -367,7 +343,7 @@ addresses this limitation through the Service Trace Vector (STV), which
 maps each distributed trace into a fixed-dimensional feature vector while
 preserving the correspondence between features and service call paths.
 
-Following TraceAnomaly, each feature 
+Following TraceAnomaly, each feature
 $j=(\mathrm{service},\mathrm{service\_path})$ corresponds to a unique service reached through a particular root-to-node execution path observed during training.
 For a trace \(i\), the feature value is defined as
 
@@ -395,7 +371,7 @@ of distributed traces, but it also introduces an important
 characteristic: structurally larger traces naturally populate more STV
 features than smaller traces. Consequently, traces containing more
 services or spans may appear more unusual to an anomaly scoring method,
-even when the underlying system behavior is operationally normal.
+even when the underlying system behavior is \rev{treated as normal under the experimental protocol}.
 
 To investigate whether this structural difference influences anomaly
 scoring, we analyze the relationship between baseline STV anomaly scores
@@ -407,7 +383,7 @@ TrainTicket configurations~\cite{zhou2021trainticket}.
 \begin{table}[t]
 	\centering
 	\caption{Pearson correlation between baseline STV~+~Isolation Forest anomaly
-		score and trace-complexity metrics (real, non-injected traces).}
+		score and trace-complexity metrics (held-out, non-injected traces).}
 	\label{tab:complexity-bias-baseline}
 	\begin{tabular}{lccc}
 		\toprule
@@ -427,13 +403,16 @@ As shown in Table~\ref{tab:complexity-bias-baseline}, baseline anomaly
 scores exhibit consistently strong positive correlations with both
 complexity measures across all three datasets. Because these
 measurements are obtained from traces without injected anomalies, the
-observed correlations cannot be attributed to successful detection of
-synthetic faults. Instead, they indicate that structural properties of a
+observed correlations cannot be attributed to the successful detection of
+synthetic faults. Instead, they indicate that the structural properties of a
 trace can substantially influence anomaly scores even when the observed
-executions are operationally normal.
+executions are \rev{traces treated as normal under the experimental
+protocol. The concern is not that all association with complexity must
+be zero, but that structural occupancy can dominate the score and
+thereby obscure feature-relative latency deviations.}
 
 Figure~\ref{fig:bias} visualizes this relationship by plotting baseline
-anomaly scores against trace size for real, non-injected traces. The
+anomaly scores against trace structural count for held-out, non-injected traces. The
 overall trend demonstrates that larger traces tend to receive higher
 baseline anomaly scores, motivating the need for an anomaly scoring
 strategy that is less sensitive to structural complexity.
@@ -441,11 +420,16 @@ strategy that is less sensitive to structural complexity.
 \begin{figure*}[t]
 	\centering
 	\includegraphics[width=\textwidth]{complexity_bias_scatter.png}
-	\caption{Baseline STV anomaly score versus trace complexity on real,
-		non-injected traces from three TrainTicket configurations. Each point
-		represents one trace. The observed positive correlations indicate that
-		structurally larger traces tend to receive higher baseline anomaly
-		scores even in the absence of injected anomalies.}
+	\caption{\rev{Baseline STV~+~Isolation Forest anomaly score versus trace
+		structural count (observed STV features and number of services;
+		dashed lines are ordinary-least-squares trend fits) on held-out,
+		non-injected traces from the three TrainTicket
+		\texttt{ts-order-service} configurations evaluated in this paper
+		(representative seed-0 split; see
+		Table~\ref{tab:complexity-bias-all-methods} for the 5-seed mean).
+		Each point represents one trace. The observed positive relationships
+		indicate substantial structural score dependence in the baseline
+		scoring configuration, even in the absence of injected anomalies.}}
 	\label{fig:bias}
 \end{figure*}
 
@@ -467,6 +451,10 @@ complexity on anomaly scoring.
 \section{Proposed Method}
 \label{sec:methodology}
 
+\rev{This section defines WR-STV in the order it is computed: STV
+construction, residual normalization, reliability weighting, and
+top-\(k\) aggregation, followed by the request-aware ablation variant.}
+
 \subsection{Overview}
 
 WR-STV is an STV-based anomaly scoring framework that transforms raw
@@ -478,7 +466,7 @@ per-feature training statistics, (3) convert observed values into
 clipped standardized residuals, (4) weight each residual by a reliability
 term reflecting how often that feature was observed during training, and
 (5) aggregate the top-\(k\) weighted residuals into a single trace-level
-score. Fig.~\ref{fig:pipeline} summarizes the full pipeline.
+score. Figure~\ref{fig:pipeline} summarizes the full pipeline.
 
 \begin{figure*}[t]
 	\centering
@@ -649,33 +637,18 @@ available. When insufficient data exist for a particular request type,
 the corresponding global statistics are used instead.
 
 Although this variant further reduces the observed correlation between
-anomaly score and trace complexity
-\begin{table}[t]
-	\centering
-	\caption{Complexity-bias correlation across methods, averaged over
-		num\_services and num\_spans (real, non-injected test traces). This is the
-		paper's central bias-reduction evidence.}
-	\label{tab:complexity-bias-all-methods}
-	\begin{tabular}{lcc}
-		\toprule
-		\textbf{Method} & \textbf{corr.\ num\_services} & \textbf{corr.\ num\_spans} \\
-		\midrule
-		Baseline STV + IF                 & 0.868 & 0.820 \\
-		Enhanced STV + IF                 & 0.835 & 0.779 \\
-		Global Residual STV (unweighted)  & 0.383 & 0.324 \\
-		\textbf{WR-STV (weighted)}        & \textbf{0.296} & \textbf{0.238} \\
-		Request-Aware WR-STV              & 0.274 & 0.218 \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-(Table~\ref{tab:complexity-bias-all-methods}), it does not consistently improve
+anomaly score and trace complexity (Table~\ref{tab:complexity-bias-all-methods}), it does not consistently improve
 anomaly scoring performance. Therefore, we report it as an ablation
 rather than the primary WR-STV method.
 
 
-
 \section{Experimental Setup}
 \label{sec:experimental-setup}
+
+\rev{This section describes the datasets, preprocessing, synthetic
+injection procedure, baseline methods, metrics, and hyperparameter
+selection used to produce the results in
+Section~\ref{sec:results}.}
 
 \subsection{Datasets}
 
@@ -745,37 +718,23 @@ test-set leakage and ensures that unseen service paths at inference time
 are treated as absent rather than being used to expand the feature space.
 
 \subsection{Synthetic Latency Injection}
-
-Because the trace sets do not provide per-trace ground-truth anomaly
-labels, we evaluate anomaly scoring using controlled synthetic latency
-injection. For a normal test trace, an injected copy is created by
-multiplying the duration of selected STV-visible spans by an injection
-factor \(f\). A span is considered STV-visible if its
-\((\text{service}, \text{service\_path})\) feature appears in the
-training vocabulary. The original trace is assigned label \(0\), while
-the injected copy is assigned label \(1\).
-
+Because the trace sets do not provide per-trace ground-truth anomaly labels, we evaluate anomaly scoring using controlled synthetic latency injection.
+For a normal test trace, an injected copy is created by multiplying the duration of selected STV-visible spans by an injection factor \(f\).
+A span is considered STV-visible if its \((\text{service}, \text{service\_path})\) feature appears in the training vocabulary.
+The original trace is assigned label \(0\), while the injected copy is assigned label \(1\).
 We evaluate two span-selection strategies:
-
 \begin{itemize}
-	\item \textbf{Largest-visible injection:} selects up to \(m\)
-	STV-visible spans with the largest original durations. This is the
-	primary controlled latency-injection setting.
-	
-	\item \textbf{Random-visible injection:} selects up to \(m\)
-	STV-visible spans uniformly at random, regardless of original
-	duration. This setting tests whether WR-STV's advantage depends on
-	always perturbing high-duration spans.
+\item \textbf{Largest-visible injection:} selects up to \(m\) STV-visible spans with the largest original durations.
+This is the primary controlled latency-injection setting.
+\item \textbf{Random-visible injection:} selects up to \(m\) STV-visible spans uniformly at random, regardless of original duration.
+This setting tests whether WR-STV's advantage depends on always perturbing high-duration spans.
 \end{itemize}
-
-Unless otherwise specified, experiments use \(f=30\) and \(m=3\). We
-also perform injection-strength sensitivity analysis using
-\(f \in \{5,10,20,30\}\), as reported in
-Section~\ref{sec:results-sensitivity}. Both injection strategies are
-restricted to STV-visible dimensions, meaning that they evaluate
-controlled latency deviations on service paths already observed during
-training. This is a deliberate scope limitation and is discussed further
-in Section~\ref{sec:threats}.
+\rev{Unless otherwise specified, experiments use \(f=30\) and \(m=3\).
+To evaluate sensitivity to perturbation magnitude, we additionally perform injection-strength sensitivity analysis using \(f \in \{1.10,1.25,1.50,2,3,5,10,20,30\}\) and \(m \in \{1,3\}\), as reported in Section~\ref{sec:results-sensitivity}.
+The smaller factors (\(1.10\times\) to \(3\times\)) represent subtle-to-moderate controlled latency changes, whereas the larger factors (\(5\times\) to \(30\times\)) are retained as stress conditions.}
+Both injection strategies are restricted to STV-visible dimensions, meaning that they evaluate controlled latency deviations on service paths already observed during training.
+\rev{Consequently, the evaluation characterizes controlled STV-visible latency perturbations rather than anomalies involving novel service paths, missing spans, dropped calls, incorrect responses, or other structural trace changes.}
+This is a deliberate scope limitation and is discussed further in Section~\ref{sec:threats}.
 
 \subsection{Baseline Methods}
 
@@ -786,29 +745,29 @@ We compare WR-STV against both raw-STV and residual-STV baselines:
 	representation from Equation~\ref{eq:stv-value}, without feature
 	normalization, scored using Isolation Forest~\cite{liu2008iforest}.
 	This is the primary baseline used to measure trace-complexity bias.
-	
+
 	\item \textbf{Enhanced STV + Isolation Forest:} z-score-normalized
 	residual features from Equations~\ref{eq:mean}--\ref{eq:residual},
 	scored using Isolation Forest. This baseline isolates the effect of
 	residual normalization independent of WR-STV's top-\(k\) scoring
 	rule and reliability weighting.
-	
+
 	\item \textbf{Max-Z Residual STV:} the maximum absolute residual from
 	Equation~\ref{eq:residual}, using \(k=1\) and no reliability
 	weighting. This isolates the contribution of the reliability weight
 	in Equation~\ref{eq:weight}.
-	
+
 	\item \textbf{Top-3 Residual STV:} the mean of the top three
 	unweighted absolute residuals. This tests whether aggregating
 	multiple residual contributors changes ranking performance without
 	reliability weighting.
-	
+
 	\item \textbf{Residual STV + LOF / One-Class SVM:} the standardized
 	residual representation scored using Local Outlier Factor
 	\cite{breunig2000lof} and One-Class SVM~\cite{scholkopf2001ocsvm}.
 	This compares WR-STV's simple top-\(k\) aggregation against classical
 	detectors applied to the same residual feature space.
-	
+
 	\item \textbf{Raw STV + LOF / One-Class SVM:} the same two detectors
 	applied directly to the unnormalized STV representation. This tests
 	whether the behavior observed with Isolation Forest is specific to
@@ -841,7 +800,8 @@ using an inner validation split. We search over
 is drawn from the outer training set, with \(30\%\) of the outer training
 traces reserved for validation. Test traces are not used during
 hyperparameter selection. This procedure selects \(k=1\) and \(C=5.0\),
-which are used for all final WR-STV results.
+which are used for all final WR-STV results
+(Table~\ref{tab:hyperparam-validation}).
 
 \begin{table}[t]
 	\centering
@@ -856,7 +816,7 @@ which are used for all final WR-STV results.
 		$C$ (residual clip bound)         & 5.0 \\
 		\bottomrule
 	\end{tabular}
-	
+
 	\vspace{4pt}
 	\footnotesize
 \end{table}
@@ -884,6 +844,13 @@ metrics are computed over the resulting normal-vs-injected trace pairs.
 \section{Results and Discussion}
 \label{sec:results}
 
+\rev{This section reports results for eight research questions in turn:
+whether structural score dependence exists (RQ1), whether residual
+normalization and detector choice affect it (RQ2), whether WR-STV
+improves detection (RQ3), its sensitivity to injection strength (RQ4),
+cross-dataset generalization (RQ5), explainability (RQ6), failure modes
+(RQ7), and computational cost (RQ8).}
+
 \subsection{RQ1: Does Trace-Complexity Bias Exist?}
 
 The baseline results indicate that trace-complexity bias is substantial.
@@ -895,100 +862,162 @@ the number of services ranges from \(r=0.968\) to \(0.982\), while the
 correlation with the number of spans ranges from \(r=0.854\) to
 \(0.981\). These consistently high correlations indicate that
 structurally larger traces receive systematically higher anomaly scores
-even in the absence of injected anomalies. This demonstrates that trace
-complexity introduces a substantial bias into the baseline anomaly
-scoring process and provides the primary motivation for WR-STV.
+even in the absence of injected anomalies. \rev{The revised analysis
+additionally measures the number of observed STV features, which directly
+represents STV feature occupancy. Averaged across the three datasets and
+five train--test splits per dataset, raw STV~+~Isolation Forest has a mean
+Pearson correlation of \(r=0.960\) with the number of observed STV
+features.}
+
+\rev{These results indicate substantial complexity-related score dependence
+in the baseline scoring process and provide the primary motivation for
+WR-STV. They do not imply that every association between trace complexity
+and operational abnormality is spurious. Rather, the concern is that
+structural occupancy can substantially influence the score among held-out,
+non-injected traces and may obscure feature-relative latency deviations.}
 
 \subsection{RQ2: Does Residual Normalization Reduce It?}
 
 \begin{table}[t]
-	\centering
-	\caption{Complexity-bias correlation across methods, averaged over
-		num\_services and num\_spans (real, non-injected test traces). This is the
-		paper's central bias-reduction evidence.}
-	\label{tab:complexity-bias-all-methods}
-	\begin{tabular}{lcc}
-		\toprule
-		\textbf{Method} & \textbf{corr.\ num\_services} & \textbf{corr.\ num\_spans} \\
-		\midrule
-		Baseline STV + IF                 & 0.868 & 0.820 \\
-		Enhanced STV + IF                 & 0.835 & 0.779 \\
-		Global Residual STV (unweighted)  & 0.383 & 0.324 \\
-		\textbf{WR-STV (weighted)}        & \textbf{0.296} & \textbf{0.238} \\
-		Request-Aware WR-STV              & 0.274 & 0.218 \\
-		\bottomrule
-	\end{tabular}
+    \centering
+    \caption{\rev{Mean Pearson correlation between anomaly score and trace
+        structural measures over three datasets and five train--test splits
+        per dataset (15 runs), evaluated on held-out, non-injected traces
+        using the sentinel representation for absent raw-STV features.}}
+    \label{tab:complexity-bias-all-methods}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Method} &
+        \textbf{corr.\ num\_services} &
+        \textbf{corr.\ num\_spans} \\
+        \midrule
+        Baseline STV + IF                 & 0.868 & 0.820 \\
+        \rev{Raw STV + LOF}               & \rev{0.872} & \rev{0.805} \\
+        \rev{Raw STV + One-Class SVM}     & \rev{0.464} & \rev{0.331} \\
+        Enhanced STV + IF                 & 0.835 & 0.779 \\
+        \rev{Residual STV + LOF}          & \rev{0.699} & \rev{0.629} \\
+        \rev{Residual STV + One-Class SVM}& \rev{0.394} & \rev{0.327} \\
+        Global Residual STV (unweighted)  & 0.383 & 0.324 \\
+        \textbf{WR-STV (weighted, \(k=1\))}
+                                           & \textbf{0.296} & \textbf{0.238} \\
+        Request-Aware WR-STV              & 0.274 & 0.218 \\
+        \bottomrule
+    \end{tabular}
 \end{table}
+
 Residual normalization substantially reduces, but does not eliminate,
-trace-complexity bias. Table~\ref{tab:complexity-bias-all-methods} shows that
-WR-STV considerably reduces the dependence of anomaly scores on trace
-structural complexity. Averaged across datasets and seeds, the Pearson
-correlation with the number of services decreases from \(r=0.868\)
-under the baseline detector to \(r=0.296\) using WR-STV and further to
-\(r=0.274\) under the request-aware variant. Similarly, the correlation
-with the number of spans decreases from \(r=0.820\) to \(r=0.238\) and
-\(r=0.218\), respectively.
+trace-complexity bias. Table~\ref{tab:complexity-bias-all-methods} shows
+that WR-STV considerably reduces the dependence of anomaly scores on
+trace structural complexity. Averaged across datasets and seeds, the
+Pearson correlation with the number of services decreases from
+\(r=0.868\) under the baseline detector to \(r=0.296\) using WR-STV and
+further to \(r=0.274\) under the request-aware variant. Similarly, the
+correlation with the number of spans decreases from \(r=0.820\) to
+\(r=0.238\) and \(r=0.218\), respectively.
+
+\rev{The additional detector analysis shows that the observed relationship
+is not specific to Isolation Forest. Raw STV scored with Local Outlier
+Factor exhibits similarly strong correlations with service and span counts,
+whereas One-Class SVM produces weaker, but still positive, Pearson
+correlations. Detector choice therefore affects the magnitude of the
+relationship. The evidence is best interpreted as a
+representation--scorer interaction rather than as a property caused
+exclusively by either raw STV or Isolation Forest.}
+
+\rev{The number of observed STV features provides a direct measure of
+representation occupancy. Its mean Pearson correlation is \(r=0.960\) for
+raw STV~+~Isolation Forest, \(r=0.935\) for raw STV~+~LOF, and \(r=0.517\)
+for raw STV~+~One-Class SVM. WR-STV reduces this value to \(r=0.368\).
+A zero-filled missing-feature robustness analysis produces the same
+qualitative conclusion as the sentinel-policy analysis reported here.}
 
 The remaining positive correlation is expected because larger traces
 naturally provide more opportunities for at least one extreme feature
 residual to occur. Consequently, WR-STV should be interpreted as
 substantially reducing, rather than completely removing,
-trace-complexity bias while preserving sensitivity to path-visible
-latency deviations.
+\rev{complexity-related score dependence} while preserving sensitivity
+to path-visible latency deviations.
 
 \subsection{RQ3: Does WR-STV Improve Anomaly Scoring and How Does It Compare with Baselines?}
 \label{sec:results-main}
 
 \begin{table}[t]
-	\centering
-	\caption{Main detection results: baseline vs.\ WR-STV, largest-visible
-		injection ($f=30$, $m=3$), mean over datasets/seeds.}
-	\label{tab:main-results}
-	\begin{tabular}{lccc}
-		\toprule
-		& \textbf{ROC-AUC} & \textbf{AUPRC} & \textbf{F1} \\
-		\midrule
-		\multicolumn{4}{l}{\textit{Within-dataset}} \\
-		Baseline STV + IF & 0.605 & 0.574 & 0.583 \\
-		\textbf{WR-STV ($k$=1, $C$=5)} & \textbf{0.814} & \textbf{0.812} & \textbf{0.738} \\
-		\midrule
-		\multicolumn{4}{l}{\textit{Cross-dataset (6 directed pairs)}} \\
-		Baseline STV + IF & 0.622 & 0.573 & 0.602 \\
-		\textbf{WR-STV ($k$=1, $C$=5)} & \textbf{0.803} & \textbf{0.804} & \textbf{0.722} \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-\begin{table}[t]
-	\centering
-	\caption{Paired statistical tests, WR-STV vs.\ baseline STV~+~IF.}
-	\label{tab:main-stats}
-	\begin{tabular}{lcccc}
-		\toprule
-		& \textbf{Gain} & \textbf{Cohen's $d_z$} & \textbf{paired-$t$ $p$} & \textbf{Wilcoxon $p$} \\
-		\midrule
-		\multicolumn{5}{l}{\textit{Within-dataset (n=15 seed$\times$dataset rows)}} \\
-		ROC-AUC & +0.209 & 2.78 & $3.68 \times 10^{-8}$ & $6.1 \times 10^{-5}$ \\
-		AUPRC   & +0.237 & 3.79 & $6.87 \times 10^{-10}$ & $6.1 \times 10^{-5}$ \\
-		F1      & +0.155 & 2.70 & $5.34 \times 10^{-8}$ & $9.82 \times 10^{-4}$ \\
-		\midrule
-		\multicolumn{5}{l}{\textit{Cross-dataset (n=6 directed pairs)}} \\
-		ROC-AUC & +0.182 & 1.92 & $0.0053$ & $0.03125$ \\
-		AUPRC   & +0.231 & 2.67 & $0.00126$ & $0.03125$ \\
-		F1      & +0.120 & 1.69 & $0.00893$ & $0.03125$ \\
-		\bottomrule
-	\end{tabular}
+    \centering
+    \caption{Main detection results: baseline vs.\ WR-STV, largest-visible
+        injection (\(f=30\), \(m=3\)), mean over datasets and seeds.}
+    \label{tab:main-results}
+    \begin{tabular}{lccc}
+        \toprule
+        & \textbf{ROC-AUC} & \textbf{AUPRC} & \textbf{F1} \\
+        \midrule
+        \multicolumn{4}{l}{\textit{Within-dataset}} \\
+        Baseline STV + IF
+        & 0.605 & 0.574 & 0.583 \\
+        \textbf{WR-STV (\(k=1\), \(C=5\))}
+        & \textbf{0.814} & \textbf{0.812} & \textbf{0.738} \\
+        \midrule
+        \multicolumn{4}{l}{\textit{Cross-dataset (six directed pairs)}} \\
+        Baseline STV + IF
+        & 0.622 & 0.573 & 0.602 \\
+        \textbf{WR-STV (\(k=1\), \(C=5\))}
+        & \textbf{0.803} & \textbf{0.804} & \textbf{0.722} \\
+        \bottomrule
+    \end{tabular}
+
+    \vspace{3pt}
+    \footnotesize
+    \rev{F1 uses an oracle top-\(N_{+}\) threshold and is reported only as
+    a ranking diagnostic; it does not represent performance under an
+    operationally selected threshold.}
 \end{table}
 
+\begin{table}[t]
+    \centering
+    \caption{\rev{Paired comparisons between WR-STV and baseline
+        STV~+~Isolation Forest. The reported \(p\)-values are exploratory
+        and unadjusted for multiple comparisons.}}
+    \label{tab:main-stats}
+    \begin{tabular}{lcccc}
+        \toprule
+        & \textbf{Gain} & \textbf{Cohen's \(d_z\)} &
+        \textbf{paired-\(t\) \(p\)} & \textbf{Wilcoxon \(p\)} \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Within-dataset
+        (\(n=15\) seed--dataset rows)}} \\
+        ROC-AUC & +0.209 & 2.78 & \(3.68 \times 10^{-8}\) &
+        \(6.1 \times 10^{-5}\) \\
+        AUPRC   & +0.237 & 3.79 & \(6.87 \times 10^{-10}\) &
+        \(6.1 \times 10^{-5}\) \\
+        F1      & +0.155 & 2.70 & \(5.34 \times 10^{-8}\) &
+        \(9.82 \times 10^{-4}\) \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Cross-dataset
+        (\(n=6\) directed pairs)}} \\
+        ROC-AUC & +0.182 & 1.92 & 0.0053 & 0.03125 \\
+        AUPRC   & +0.231 & 2.67 & 0.00126 & 0.03125 \\
+        F1      & +0.120 & 1.69 & 0.00893 & 0.03125 \\
+        \bottomrule
+    \end{tabular}
+
+    \vspace{3pt}
+    \footnotesize
+    \rev{The 15 within-dataset rows are repeated splits of three datasets
+    and are not equivalent to 15 independent datasets. The six directed
+    transfer pairs are derived from three underlying datasets and are not
+    independent observations; cross-dataset inference is therefore treated
+    as exploratory. F1 uses an oracle top-\(N_{+}\) threshold and is a
+    ranking diagnostic.}
+\end{table}
 
 Table~\ref{tab:main-results} and Table~\ref{tab:main-stats} report the
 primary anomaly scoring comparison. Compared with baseline STV +
 Isolation Forest, WR-STV improves the within-dataset ROC-AUC from
 \(0.605\) to \(0.814\). The cross-dataset ROC-AUC also improves from
-\(0.622\) to \(0.803\). The within-dataset improvement is statistically
-significant with a large paired effect size. The cross-dataset
-comparison also shows a large paired effect, although its statistical
-interpretation is limited by the small number of directed train-test
-pairs.
+\(0.622\) to \(0.803\). \rev{The within-dataset comparison has a large
+paired effect size across the evaluated dataset--seed rows. The
+cross-dataset comparison also shows a large paired effect, but its
+associated \(p\)-values are exploratory because the six directed pairs
+arise from only three underlying datasets.}
 
 These results indicate that the primary performance improvement arises
 from feature-wise residual normalization rather than from replacing one
@@ -1000,61 +1029,66 @@ consistently across heterogeneous traces. The ablation results should
 be interpreted as evidence for residual normalization as the primary
 component: the additional reliability weighting is metric-dependent
 and is not statistically significant for ROC-AUC or F1 in the reported
-comparison. The reported $p$-values are exploratory and are not
+comparison. The reported \(p\)-values are exploratory and are not
 adjusted for the multiple comparisons across metrics, methods, and
 transfer pairs.
+
 \begin{table}[t]
-	\centering
-	\caption{Detection performance vs.\ classical baselines, random-visible
-		injection ($f=30$), mean ROC-AUC.}
-	\label{tab:extra-baselines}
-	\begin{tabular}{lc}
-		\toprule
-		\textbf{Method} & \textbf{ROC-AUC} \\
-		\midrule
-		\textbf{WR-STV ($k$=1, $C$=5)}   & \textbf{0.811} \\
-		Max-Z Residual STV (unweighted) & 0.798 \\
-		Residual STV + LOF              & 0.785 \\
-		Residual STV + One-Class SVM    & 0.775 \\
-		Top-3 Residual STV (unweighted) & 0.771 \\
-		Raw STV + One-Class SVM         & 0.761 \\
-		Raw STV + LOF                   & 0.707 \\
-		Enhanced STV + IF               & 0.673 \\
-		Baseline STV + IF               & 0.604 \\
-		\bottomrule
-	\end{tabular}
+    \centering
+    \caption{Detection performance vs.\ classical baselines,
+        random-visible injection (\(f=30\)), mean ROC-AUC.}
+    \label{tab:extra-baselines}
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Method} & \textbf{ROC-AUC} \\
+        \midrule
+        \textbf{WR-STV (\(k=1\), \(C=5\))} & \textbf{0.811} \\
+        Max-Z Residual STV (unweighted)      & 0.798 \\
+        Residual STV + LOF                   & 0.785 \\
+        Residual STV + One-Class SVM         & 0.775 \\
+        Top-3 Residual STV (unweighted)      & 0.771 \\
+        Raw STV + One-Class SVM              & 0.761 \\
+        Raw STV + LOF                        & 0.707 \\
+        Enhanced STV + IF                    & 0.673 \\
+        Baseline STV + IF                    & 0.604 \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 \begin{table}[t]
-	\centering
-	\caption{Paired significance, WR-STV vs.\ its two closest competitors
-		(random-visible injection). Report both rows -- the non-significant
-		ROC-AUC/F1 comparison against the unweighted variant is an honest and
-		important ablation finding, not a result to omit.}
-	\label{tab:extra-baseline-stats}
-	\begin{tabular}{lccc}
-		\toprule
-		\textbf{Comparison} & \textbf{Metric} & \textbf{Diff.} & \textbf{$p$ (paired-$t$ / Wilcoxon)} \\
-		\midrule
-		\multirow{3}{*}{vs.\ Max-Z Residual STV}
-		& ROC-AUC & $+0.013$ & $0.108$ / $0.135$ \\
-		& AUPRC   & $+0.065$ & $5.1\times10^{-5}$ / -- \\
-		& F1      & $+0.003$ & $0.735$ / -- \\
-		\midrule
-		\multirow{2}{*}{vs.\ Residual STV + LOF}
-		& ROC-AUC & $+0.025$ & $0.0026$ / -- \\
-		& F1      & $+0.007$ & $0.32$ / -- \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+    \centering
+    \caption{\rev{Paired comparisons between WR-STV and its two closest
+        residual-space baselines under random-visible injection. The
+        reported \(p\)-values are exploratory and unadjusted.}}
+    \label{tab:extra-baseline-stats}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Comparison} & \textbf{Metric} & \textbf{Diff.} &
+        \textbf{\(p\) (paired-\(t\) / Wilcoxon)} \\
+        \midrule
+        \multirow{3}{*}{vs.\ Max-Z Residual STV}
+        & ROC-AUC & \(+0.013\) & \(0.108 / 0.135\) \\
+        & AUPRC   & \(+0.065\) & \(5.1\times10^{-5} / \text{--}\) \\
+        & F1      & \(+0.003\) & \(0.735 / \text{--}\) \\
+        \midrule
+        \multirow{2}{*}{vs.\ Residual STV + LOF}
+        & ROC-AUC & \(+0.025\) & \(0.0026 / \text{--}\) \\
+        & F1      & \(+0.007\) & \(0.32 / \text{--}\) \\
+        \bottomrule
+    \end{tabular}
 
+    \vspace{3pt}
+    \footnotesize
+    \rev{F1 uses an oracle top-\(N_{+}\) threshold and is reported only as
+    a ranking diagnostic.}
+\end{table}
 
 Table~\ref{tab:extra-baselines} further compares WR-STV with classical
 baselines operating on the same residual representation. Although WR-STV
 achieves the highest overall ROC-AUC (\(0.811\)), the margin over the
 unweighted Max-Z Residual STV (\(0.798\)) is relatively small.
 
-Table~\ref{tab:extra-baselines} shows that this difference is not
+Table~\ref{tab:extra-baseline-stats} shows that this difference is not
 statistically significant for ROC-AUC (\(p=0.108\)) or F1
 (\(p=0.735\)), while only Average Precision reaches statistical
 significance. This suggests that most of WR-STV's performance gain
@@ -1064,38 +1098,34 @@ provides a smaller, metric-dependent incremental improvement.
 \subsection{RQ4: How Robust Is WR-STV to Injection Strength?}
 \label{sec:results-sensitivity}
 
-\begin{figure}[t]
+\begin{figure*}[t]
     \centering
-    \includegraphics[width=0.85\linewidth]{fig_sensitivity.png}
-    \caption{Sensitivity to injection strength $f$ (largest-visible strategy), WR-STV vs.\ baseline}
-    \label{fig:sensitivity}
-\end{figure}
-	
-	
-	
-Figure~\ref{fig:sensitivity} shows that WR-STV's ROC-AUC, AUPRC, and F1
-increase monotonically as the injection factor increases from
-\(5\times\) to \(30\times\), while baseline STV~+~IF is comparatively
-insensitive to injection strength over the same range. This indicates
-that WR-STV's score responds to the magnitude of controlled latency
-deviations, which is desirable for an anomaly scoring method. However,
-even the smallest evaluated factor, \(5\times\), represents a large
-multiplicative latency deviation. These results therefore demonstrate
-sensitivity trends under controlled perturbations rather than
-performance under subtle production-scale degradations.
+    \includegraphics[width=\textwidth]{fig_sensitivity.png}
+\caption{\rev{Sensitivity to controlled multiplicative latency
+perturbations at \(f\in\{1.10,1.25,1.50,2,3,5,10,20,30\}\times\),
+under largest-visible and random-visible span selection, with one
+and three modified spans. Curves show means over three datasets and
+five train--test splits per dataset.}}
+\label{fig:sensitivity}
+\end{figure*}
 
-We additionally evaluate the random-visible injection strategy, which
-selects injected spans uniformly at random among STV-visible spans rather
-than always selecting the largest-duration visible span. This checks
-whether WR-STV's advantage is an artifact of injections always landing
-on spans most likely to affect a top-residual scoring rule. WR-STV's
-ROC-AUC changes negligibly between strategies
-(\(0.814 \rightarrow 0.811\)), as does the baseline's
-(\(0.605 \rightarrow 0.604\)). This indicates that the observed
-advantage is not explained by this specific form of injection
-circularity. Nevertheless, both strategies remain restricted to
-STV-visible service paths and model only multiplicative latency
-anomalies, limitations discussed further in Section~\ref{sec:threats}.
+\rev{The expanded sensitivity analysis includes perturbation factors from
+\(1.10\times\) to \(30\times\), thereby characterizing both subtle
+controlled changes and high-severity stress conditions. At
+\(1.10\times\) to \(1.50\times\), ranking is close to chance for several
+method and injection configurations, indicating that subtle latency
+changes remain difficult. Performance generally improves as perturbation
+severity increases, although strict monotonicity is not assumed for every
+method, strategy, and modified-span count.}
+
+\rev{The revised analysis also evaluates both one and three modified spans
+under largest-visible and random-visible selection. Random-visible
+selection reduces the concern that the experiment always targets spans
+with the largest original durations and therefore favours a
+maximum-residual scoring rule. The results characterize sensitivity to
+controlled STV-visible latency perturbations; they do not establish
+performance for naturally occurring incidents, novel paths, missing spans,
+incorrect responses, or structural trace changes.}
 
 \subsection{RQ5: Does WR-STV Generalize Across Datasets?}
 \begin{table}[t]
@@ -1117,6 +1147,12 @@ anomalies, limitations discussed further in Section~\ref{sec:threats}.
 		\textbf{Mean (6 pairs)} & \textbf{0.803} & \textbf{0.804} & \textbf{0.722} \\
 		\bottomrule
 	\end{tabular}
+
+	\vspace{3pt}
+	\footnotesize
+	\rev{F1 uses an oracle top-\(N_{+}\) threshold and is reported only as
+	a ranking diagnostic; it does not represent performance under an
+	operationally selected threshold.}
 \end{table}
 
 
@@ -1144,13 +1180,14 @@ coverage problem.
 		Dataset 1 $\rightarrow$ Dataset 2 & 0.772 & 1.707 & 0.891 \\
 		\bottomrule
 	\end{tabular}
-	
+
 	\vspace{4pt}
 	\footnotesize
 	Spearman correlation ($p_{90}$ standardized shift vs.\ ROC-AUC, all 6
-	directed pairs): $r = -0.829$, $p = 0.0416$. \textbf{Report as exploratory}
-	-- $n=6$ pairs are drawn from only 3 underlying datasets and are not
-	independent samples; do not present this $p$-value as confirmatory.
+	directed pairs): $r = -0.829$, $p = 0.0416$. \rev{This correlation is
+	exploratory: the six directed pairs are drawn from only three
+	underlying datasets and are not independent samples, so the
+	$p$-value above should not be read as confirmatory.}
 \end{table}
 
 Table~\ref{tab:distribution-shift} instead shows that this pair has the
@@ -1187,7 +1224,7 @@ than definitive.
 
 Table~\ref{tab:explainability} shows that WR-STV's top-3 contributing
 service paths recover the actual injected service paths with
-\(93.7\%\) service overlap and \(91.4\%\) path overlap, aggregated across
+\(93.7\%\) service overlap and \(91.5\%\) path overlap, aggregated across
 all cross-dataset pairs. This result is conditional on the injected
 anomaly being among the largest residual signals in the trace. The same
 scoring mechanism used for anomaly scoring is also used for localization,
@@ -1218,23 +1255,28 @@ localization capability for anomalies of unknown type.
 		\bottomrule
 	\end{tabular}
 \end{table}
-Table~\ref{tab:failure-categories} categorizes the 279 unique cases,
-after deduplication from 1{,}395 raw pairwise rows, where WR-STV did not
-rank an injected trace above its original. The two dominant categories,
-pre-existing high normal score (\(44.4\%\)) and very short traces with
-limited path evidence (\(37.6\%\), mean \(\approx 1.3\) spans), together
-account for \(82\%\) of failures. Both categories have clear causal
-interpretations: a trace that already scores in the upper tail of the
-normal-score distribution has little room to be pushed higher by an
-injected anomaly, and a one-or-two-span trace provides limited
-STV-visible evidence for a top-\(k\) aggregation with \(k=1\).
+Table~\ref{tab:failure-categories} categorizes the 279 unique cases, after deduplication
+from 1{,}395 raw pairwise rows, where WR-STV did not rank an injected trace above its
+original. The two dominant categories, pre-existing high normal score (44.4\%) and very
+short traces with limited path evidence (37.6\%, mean $\approx 1.3$ spans), together
+account for 82\% of failures.
 
-These failure modes suggest that many WR-STV failures arise from limited
-or unfavorable evidence available to the scorer rather than from random
-instability of the scoring rule. In practice, traces with very few
-observable service-path features may require confidence estimates,
-abstention rules, or complementary detectors rather than being treated
-as equally reliable scoring targets.
+\rev{These categories provide plausible descriptive
+interpretations of the observed failures rather than causal explanations. Although a
+failed case may satisfy more than one underlying condition, the reported taxonomy assigns
+one primary category according to a fixed rule order. An original trace with an already
+elevated anomaly score can be difficult for its injected counterpart to outrank, while
+a trace containing only one or two spans provides limited STV-visible evidence from which
+to identify a feature-relative latency deviation.}
+
+\rev{The short-trace finding is
+particularly relevant to the validated $k=1$ configuration. With $k=1$, WR-STV scores
+a trace using its maximum reliability-weighted clipped standardized residual. This avoids
+accumulating numerous small contributions in structurally larger traces, but traces with
+very few observable service-path features provide fewer opportunities for a sufficiently
+strong and reliable residual to emerge.}
+
+\rev{These observed failure conditions suggest that many WR-STV ranking failures can arise when the available service-path evidence is limited or when the original trace already receives a high score.} In practice, traces with very few observable service-path features may require confidence estimates, abstention rules, or complementary detectors rather than being treated as equally reliable scoring targets.
 
 \subsection{RQ8: Is WR-STV Computationally Lightweight?}
 
@@ -1242,7 +1284,7 @@ Although computational efficiency is not the primary contribution of
 this work, WR-STV also offers practical scoring advantages.
 \begin{table}[t]
 	\centering
-	\caption{Runtime comparison, mean over datasets and seeds.}
+	\caption{\rev{Runtime comparison, mean over datasets and seeds. Per-trace values represent mean batched scoring time divided by the number of scored traces.}}
 	\label{tab:runtime}
 	\begin{tabular}{lcc}
 		\toprule
@@ -1253,13 +1295,10 @@ this work, WR-STV also offers practical scoring advantages.
 		Baseline STV + IF  & 0.607 & 0.3647 \\
 		\bottomrule
 	\end{tabular}
-	WR-STV is $\approx$3.5$\times$ faster end-to-end and $\approx$16$\times$
-	faster per-trace than Isolation Forest-based baselines. Memory footprint is
-	negligible for all methods at this dataset scale and is not a
-	differentiator; report it in one sentence in text, not as a table.
 \end{table}
 Table~\ref{tab:runtime} shows that WR-STV requires approximately
-\(0.022\)\,ms per trace, compared with approximately \(0.36\)\,ms for
+\(0.022\)\,ms of mean batched scoring time per trace, compared with
+approximately \(0.36\)\,ms for
 Isolation Forest-based baselines, corresponding to roughly a
 \(16\times\) reduction in scoring time. This improvement is expected
 because WR-STV performs lightweight statistical computations using
@@ -1271,9 +1310,8 @@ would require additional thresholding and operational validation.
 \subsection{Summary of Findings}
 
 Across the evaluated research questions, the results support the central
-hypothesis of this work. Raw STV representations scored with Isolation
-Forest are strongly influenced by trace structural complexity. WR-STV
-substantially reduces this dependence through feature-wise residual
+hypothesis of this work. Raw STV representations scored with Isolation Forest exhibit strong structural score dependence with trace complexity.
+WR-STV substantially reduces this dependence through feature-wise residual
 normalization and improves controlled latency-anomaly ranking in
 within-dataset experiments, with promising but more limited evidence for
 cross-dataset transfer. The method also provides service-path-level
@@ -1286,19 +1324,13 @@ than a general-purpose solution to all microservice anomaly types.
 \section{Threats to Validity}
 \label{sec:threats}
 
+\rev{This section discusses internal, construct, external, and
+statistical-conclusion validity threats to the evaluation reported in
+Section~\ref{sec:results}.}
+
 \subsection{Internal Validity}
 
-The main internal validity risk is optimistic bias from design or
-hyperparameter choices. To reduce this risk, the WR-STV top-\(k\)
-parameter and residual clip bound \(C\) are selected using a validation
-split independent of the held-out test traces, as described in
-Section~\ref{sec:hyperparameter-selection}. The primary injection
-setting \((f=30, m=3)\) is reported together with injection
-strength sensitivity over \(f \in \{5,10,20,30\}\), so the effect of injection
-strength is visible rather than hidden in a single operating point.
-All STV vocabularies, residual statistics, and reliability weights are
-estimated from training traces only and then applied unchanged to
-validation or test traces.
+\rev{The main internal-validity risk is optimistic bias from design or hyperparameter choices. The top-$k$ parameter and residual clip bound are selected on an inner validation split independent of the held-out test traces. The vocabulary, residual statistics, and reliability weights are estimated from training traces only. Perturbations are introduced only after splitting and never enter model fitting or hyperparameter selection. The revised sensitivity study evaluates $f\in\{1.10,1.25,1.50,2,3,5,10,20,30\}$, $m\in\{1,3\}$, and both largest-visible and random-visible selection over five splits for each of the three datasets.}
 
 \subsection{Construct Validity}
 
@@ -1345,57 +1377,24 @@ Consequently, cross-dataset statistical tests should be interpreted as
 exploratory evidence supporting observed trends rather than definitive
 statistical confirmation.
 
-\section{Conclusion }
+\section{Conclusion and Future Work}
 \label{sec:conclusion}
 
-This paper studied trace-complexity bias in a common microservice
-anomaly scoring pattern: Service Trace Vector representations scored by
-an unnormalized unsupervised detector. On real, non-injected TrainTicket
-traces, baseline STV~+~Isolation Forest anomaly scores correlate strongly
-with trace size, with correlations of approximately
-\(r \approx 0.85\)--\(0.98\) for span and service-count based complexity
-measures. This finding shows that raw STV-based scores can reflect trace
-structural complexity rather than only operational abnormality.
+\rev{This paper studied structural score dependence in a common microservice anomaly-scoring pattern: Service Trace Vector representations scored directly by an unnormalized unsupervised detector. On held-out, non-injected TrainTicket traces, baseline STV~+~Isolation Forest anomaly scores correlate strongly with service count and span count, with per-dataset correlations of approximately \(r=0.85\)--\(0.98\). The revised analysis further shows a mean correlation of \(r=0.960\) with the number of observed STV features, which directly measures representation occupancy. Raw STV~+~LOF closely reproduces the strong structural relationship, whereas One-Class SVM produces weaker Pearson correlations. These findings indicate that detector choice affects the magnitude of the relationship and support an interpretation as a representation--scorer interaction rather than an effect attributable exclusively to Isolation Forest. They do not imply that every association between trace complexity and operational abnormality is spurious; instead, the concern is that structural occupancy may substantially influence the score and obscure feature-relative latency deviations.}
 
-To address this issue, we proposed WR-STV, a lightweight STV-based
-scoring method that applies per-feature residual standardization,
-residual clipping, reliability weighting, and top-\(k\) aggregation.
-Across the evaluated datasets, WR-STV substantially reduces the measured
-correlation between anomaly score and trace complexity
-(\(r \approx 0.30\)) while improving controlled STV-visible latency
-anomaly ranking over baseline STV~+~Isolation Forest
-(within-dataset ROC-AUC \(0.605 \rightarrow 0.814\)). Cross-dataset
-experiments show dataset-dependent transfer behavior, improving the
-six-pair mean from \(0.622\) to \(0.803\), with pairwise ROC-AUC values
-from $0.611$ to $0.891$. These results should be interpreted cautiously
-because they are based on only six directed train-test pairs from one
-benchmark service. In particular, Dataset~2~$\rightarrow$~Dataset~1
-is weak ($0.611$), despite stronger transfer when Dataset~1 is the
-training source.
+To address this issue, we proposed WR-STV, a lightweight STV-based scoring method that applies per-feature residual standardization, residual clipping, and reliability weighting. \rev{The general method supports top-\(k\) scoring, but validation selected \(k=1\) and \(C=5\). Therefore, the final evaluated configuration is a max-based scorer that assigns each trace its maximum reliability-weighted clipped standardized residual. This choice avoids accumulating numerous small contributions in structurally larger traces, although very short traces with few observable service-path features can provide limited evidence for the maximum-residual scorer.}
 
-The ablation results indicate that most of the improvement comes from
-feature-wise residual normalization, while the proposed reliability
-weighting contributes a smaller, metric-dependent refinement. WR-STV
-also provides interpretable service-path-level evidence, with top-3
-contributing service paths recovering more than \(90\%\) of known
-injected paths in the evaluated setting. Runtime analysis further shows
-that WR-STV achieves roughly a \(15\times\) lower per-trace scoring time
-than Isolation Forest-based baselines. Overall, the results support
-WR-STV as a lightweight and interpretable approach for reducing
-trace-complexity bias in controlled STV-visible latency anomaly scoring,
-rather than as a general solution to all microservice anomaly types.
+\rev{Across the evaluated datasets, WR-STV substantially reduces the measured correlation between anomaly score and trace complexity. The mean Pearson correlation with service count decreases from \(r=0.868\) under raw STV~+~Isolation Forest to \(r=0.296\) using WR-STV, while the correlation with span count decreases from \(r=0.820\) to \(r=0.238\). The corresponding correlation with the number of observed STV features decreases from \(r=0.960\) to \(r=0.368\). These findings show that WR-STV reduces, but does not eliminate, complexity-related score dependence.}
 
-Future work will extend this study in four directions: evaluating
-anomalies beyond STV-visible latency perturbations (e.g., dropped calls,
-novel call paths, missing spans, and other structural trace anomalies);
-testing generalization of the complexity-bias pattern on additional
-services, benchmark systems, and production-like traces beyond
-\texttt{ts-order-service}; attaching confidence estimates or abstention
-rules for very short, low-evidence traces, which the failure analysis
-identifies as a predictable failure mode; and validating WR-STV against
-real-world fault-injection or incident-labeled datasets to assess its
-behavior on anomalies not generated by this paper's own evaluation
-procedure.
+\rev{Under the original controlled STV-visible latency-perturbation setting with \(f=30\) and \(m=3\), WR-STV improves within-dataset ROC-AUC over baseline STV~+~Isolation Forest from \(0.605\) to \(0.814\). The expanded sensitivity study evaluates multiplicative factors from \(1.10\times\) to \(30\times\), one and three modified spans, and both largest-visible and random-visible selection. The results show that subtle perturbations around \(1.10\times\)--\(1.50\times\) remain difficult and that ranking performance generally improves as perturbation severity increases, without implying strict monotonicity for every method and injection configuration.}
+
+Cross-dataset experiments show dataset-dependent transfer behavior, improving the six-pair mean ROC-AUC from \(0.622\) to \(0.803\), with pairwise ROC-AUC values ranging from \(0.611\) to \(0.891\). These results should be interpreted cautiously because they are based on only six directed train--test pairs derived from three underlying datasets and therefore do not constitute independent observations. In particular, Dataset~2~\(\rightarrow\)~Dataset~1 is weak (\(0.611\)), despite stronger transfer when Dataset~1 is the training source. Accordingly, the cross-dataset findings should be treated as exploratory evidence of transfer behavior rather than confirmatory statistical evidence.
+
+The ablation results indicate that most of the anomaly-ranking improvement comes from feature-wise residual normalization, while the proposed reliability weighting provides a smaller, metric-dependent refinement. WR-STV also provides interpretable service-path-level evidence, with top-3 contributing service paths recovering more than \(90\%\) of known injected paths in the evaluated setting. \rev {The top-3 explanation list is a diagnostic ranking of contributors rather than the set of features jointly used by the final \(k=1\) anomaly score. Runtime analysis further shows that WR-STV requires approximately \(0.022\)\,ms of mean batched scoring time per trace, corresponding to approximately \(16\times\) lower mean batched scoring time per trace than the evaluated Isolation Forest-based baselines.}
+
+\rev{Overall, the results support WR-STV as a lightweight and interpretable approach for reducing structural score dependence in controlled STV-visible latency ranking. They do not establish general-purpose microservice anomaly detection or performance on naturally occurring production incidents. The evaluation is limited to three configurations of one benchmark service and does not cover incorrect responses, dropped calls, missing spans, novel service paths, or structural changes in the trace graph.}
+
+Future work will extend this study in four directions: evaluating anomalies beyond STV-visible latency perturbations, including \rev{incorrect responses,} dropped calls, novel call paths, missing spans, and other structural trace anomalies; testing the generalization of the complexity-related score-dependence pattern on additional services, benchmark systems, and production-like traces beyond \texttt{ts-order-service}; attaching confidence estimates or abstention rules for very short, low-evidence traces, which the failure analysis identifies as an observed limitation; and validating WR-STV against real-world fault-injection or incident-labeled datasets to assess its behavior on anomalies not generated by this paper's evaluation procedure.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1403,8 +1402,7 @@ procedure.
 
 \funding{This work was financially supported by SRM University-AP, Andhra Pradesh, India. The authors gratefully acknowledge the financial support provided by the university.}
 
-\dataavailability{The source code, data sets and reproduction scripts are openly available at \url{https://github.com/pVnpNdu02/Reducing-Trace-Complexity-Bias-WR-STV}.}
-
+\dataavailability{ The source code, datasets, and reproduction scripts are openly available at: \url{https://github.com/pVnpNdu02/Reducing-Trace-Complexity-Bias-WR-STV} }
 
 
 \section*{Disclosure of Generative AI Use}
@@ -1422,4 +1420,3 @@ The authors declare no conflict of interest.
 \section*{References}
 \bibliography{references}
 \end{document}
-

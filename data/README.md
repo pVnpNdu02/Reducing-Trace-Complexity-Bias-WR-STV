@@ -69,6 +69,26 @@ failure categorization, runtime benchmarks, and hyperparameter validation.
 `paper_experiment_results/paper_final_tables/` contains the exact CSVs used
 for the results reported in the paper.
 
+### Latest Reviewer Evidence Run
+
+The active `03_complexity_analysis_final` notebook section records a D1-D3
+run with seeds 0-4: 30 complexity runs across the `sentinel` and `zero`
+missing-value policies, plus 48 perturbation configurations across 5 seeds
+and 3 datasets (720 evaluations total). Its saved output confirms all three
+datasets and the five-seed checkpoints.
+
+The notebook writes the full reviewer exports to the Colab Drive folder
+`_processed_phase1/paper_experiment_results/reviewer_revision_final/`. Those
+full CSVs are not currently included in this repository; only the notebook's
+displayed previews are available here. See
+`paper_experiment_results/reviewer_revision_final/README.md` for the expected
+files and export status. Do not treat the obsolete appendix's 3-seed preview
+as the final reviewer run.
+
+The files in `paper_experiment_results/runtime_lightweight_analysis/` are
+retained: they are produced by the active `09_runtime_final` section, which
+uses 3 seeds across 3 datasets (9 runs), not by a deleted notebook section.
+
 ## Regenerating from scratch
 
 `notebooks/data_preprocessing.ipynb` parses the raw TrainTicket deployment
