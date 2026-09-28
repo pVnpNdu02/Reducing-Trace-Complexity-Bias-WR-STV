@@ -1,0 +1,145 @@
+method,roc_auc,average_precision,precision_at_k,precision,recall,f1,dataset,seed,strategy,mode,magnitude,modified_spans,pairwise_win_rate
+Raw STV + IF,0.6006451612903225,0.5078071076210611,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.1,1,0.16
+WR-STV k=1,0.5819354838709678,0.4929802143356762,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.1,1,0.24
+Max-Z Residual STV,0.5864516129032258,0.4936990251883975,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,multiplicative,1.1,1,0.24
+Raw STV + IF,0.6012903225806452,0.5086139875660216,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.1,3,0.24
+WR-STV k=1,0.5825806451612903,0.49664451353305694,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.1,3,0.36
+Max-Z Residual STV,0.5838709677419355,0.4948677691956996,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,multiplicative,1.1,3,0.36
+Raw STV + IF,0.6038709677419355,0.5122809049959849,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.25,1,0.28
+WR-STV k=1,0.5761290322580646,0.49355601617855915,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,multiplicative,1.25,1,0.28
+Max-Z Residual STV,0.572258064516129,0.4933413776220745,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,multiplicative,1.25,1,0.24
+Raw STV + IF,0.6064516129032258,0.518874277315673,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.25,3,0.44
+WR-STV k=1,0.5793548387096774,0.4990293831460521,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,multiplicative,1.25,3,0.36
+Max-Z Residual STV,0.5658064516129032,0.4853131743045095,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,multiplicative,1.25,3,0.36
+Raw STV + IF,0.6058064516129031,0.5203890921304878,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.5,1,0.4
+WR-STV k=1,0.6148387096774194,0.5234880499062757,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.5,1,0.36
+Max-Z Residual STV,0.6070967741935485,0.5230677751732322,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.5,1,0.32
+Raw STV + IF,0.6129032258064515,0.530175333878649,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.5,3,0.52
+WR-STV k=1,0.6154838709677419,0.5260848827726305,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.5,3,0.44
+Max-Z Residual STV,0.6019354838709677,0.5152798261025247,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,1.5,3,0.44
+Raw STV + IF,0.6109677419354839,0.5230168605722098,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,2.0,1,0.48
+WR-STV k=1,0.6187096774193549,0.5325413748539733,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,2.0,1,0.44
+Max-Z Residual STV,0.6329032258064516,0.5446422225456,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,2.0,1,0.4
+Raw STV + IF,0.62,0.5343838919011605,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,2.0,3,0.56
+WR-STV k=1,0.6387096774193548,0.5461711935793754,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,2.0,3,0.48
+Max-Z Residual STV,0.6290322580645161,0.5379353754752167,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,2.0,3,0.48
+Raw STV + IF,0.6180645161290322,0.5317960285206844,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,3.0,1,0.52
+WR-STV k=1,0.6387096774193548,0.5430719335299585,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,3.0,1,0.48
+Max-Z Residual STV,0.6567741935483871,0.5563210126954556,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,3.0,1,0.44
+Raw STV + IF,0.6316129032258064,0.5462364925400957,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,3.0,3,0.6
+WR-STV k=1,0.6619354838709677,0.5621593370623799,0.6,0.6,0.6,0.6,dataset_2,4,random_visible,multiplicative,3.0,3,0.52
+Max-Z Residual STV,0.6574193548387097,0.5518653339226558,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,3.0,3,0.52
+Raw STV + IF,0.6206451612903225,0.5331910094263035,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,5.0,1,0.52
+WR-STV k=1,0.6825806451612904,0.5752716186852274,0.6,0.6,0.6,0.6,dataset_2,4,random_visible,multiplicative,5.0,1,0.52
+Max-Z Residual STV,0.6870967741935484,0.5722987801157889,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,5.0,1,0.52
+Raw STV + IF,0.635483870967742,0.5491314734457149,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,5.0,3,0.6
+WR-STV k=1,0.6929032258064516,0.5775132586179738,0.64,0.64,0.64,0.64,dataset_2,4,random_visible,multiplicative,5.0,3,0.56
+Max-Z Residual STV,0.6832258064516129,0.5569417199294915,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,5.0,3,0.56
+Raw STV + IF,0.6245161290322581,0.5373096907449848,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,10.0,1,0.52
+WR-STV k=1,0.7438709677419355,0.6374372426215345,0.64,0.64,0.64,0.64,dataset_2,4,random_visible,multiplicative,10.0,1,0.64
+Max-Z Residual STV,0.7270967741935483,0.6109108975676916,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,10.0,1,0.64
+Raw STV + IF,0.6412903225806452,0.5553335874651664,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,10.0,3,0.6
+WR-STV k=1,0.7696774193548387,0.6703912203976956,0.68,0.68,0.68,0.68,dataset_2,4,random_visible,multiplicative,10.0,3,0.64
+Max-Z Residual STV,0.74,0.620811965945752,0.6,0.6,0.6,0.6,dataset_2,4,random_visible,multiplicative,10.0,3,0.64
+Raw STV + IF,0.6251612903225807,0.5568225112578055,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,20.0,1,0.56
+WR-STV k=1,0.7735483870967742,0.6690606587455186,0.72,0.72,0.72,0.72,dataset_2,4,random_visible,multiplicative,20.0,1,0.68
+Max-Z Residual STV,0.7529032258064516,0.6302747045161157,0.64,0.64,0.64,0.64,dataset_2,4,random_visible,multiplicative,20.0,1,0.68
+Raw STV + IF,0.6483870967741936,0.5836113331113331,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,20.0,3,0.64
+WR-STV k=1,0.7890322580645162,0.7144816622346336,0.72,0.72,0.72,0.72,dataset_2,4,random_visible,multiplicative,20.0,3,0.68
+Max-Z Residual STV,0.7658064516129032,0.6400115225964822,0.68,0.68,0.68,0.68,dataset_2,4,random_visible,multiplicative,20.0,3,0.68
+Raw STV + IF,0.6251612903225807,0.5568225112578055,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,multiplicative,30.0,1,0.56
+WR-STV k=1,0.7819354838709677,0.6808809709817971,0.72,0.72,0.72,0.72,dataset_2,4,random_visible,multiplicative,30.0,1,0.68
+Max-Z Residual STV,0.7683870967741936,0.6477225802075006,0.64,0.64,0.64,0.64,dataset_2,4,random_visible,multiplicative,30.0,1,0.68
+Raw STV + IF,0.6483870967741936,0.5836113331113331,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,multiplicative,30.0,3,0.64
+WR-STV k=1,0.7999999999999999,0.7414130855820231,0.72,0.72,0.72,0.72,dataset_2,4,random_visible,multiplicative,30.0,3,0.72
+Max-Z Residual STV,0.7806451612903226,0.6579322973495992,0.68,0.68,0.68,0.68,dataset_2,4,random_visible,multiplicative,30.0,3,0.72
+Raw STV + IF,0.5967741935483871,0.5006569291445668,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.1,1,0.08
+WR-STV k=1,0.5793548387096774,0.49246387752200416,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.1,1,0.24
+Max-Z Residual STV,0.5819354838709677,0.4914161978964957,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.1,1,0.2
+Raw STV + IF,0.6012903225806452,0.5086139875660216,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.1,3,0.24
+WR-STV k=1,0.5806451612903225,0.4959037727923162,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.1,3,0.36
+Max-Z Residual STV,0.5819354838709678,0.4938151376167522,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.1,3,0.36
+Raw STV + IF,0.5987096774193548,0.5073616633386628,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.25,1,0.24
+WR-STV k=1,0.5774193548387097,0.49529275155563535,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.25,1,0.28
+Max-Z Residual STV,0.5651612903225807,0.4898081570797795,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.25,1,0.2
+Raw STV + IF,0.6070967741935483,0.5255409439823396,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.25,3,0.48
+WR-STV k=1,0.5780645161290323,0.49828864240531134,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.25,3,0.36
+Max-Z Residual STV,0.5677419354838711,0.4933514518164711,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,1.25,3,0.36
+Raw STV + IF,0.6058064516129033,0.5208504677918635,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.5,1,0.44
+WR-STV k=1,0.6122580645161291,0.5235607545726091,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.5,1,0.36
+Max-Z Residual STV,0.5974193548387097,0.5185848328672621,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.5,1,0.28
+Raw STV + IF,0.6129032258064515,0.530175333878649,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.5,3,0.52
+WR-STV k=1,0.6141935483870968,0.5253441420318897,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.5,3,0.44
+Max-Z Residual STV,0.6038709677419355,0.5234629762856748,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,1.5,3,0.44
+Raw STV + IF,0.6174193548387097,0.527780717297986,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,2.0,1,0.48
+WR-STV k=1,0.6238709677419355,0.5375129890681856,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,2.0,1,0.44
+Max-Z Residual STV,0.6141935483870968,0.5365374201650446,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,2.0,1,0.44
+Raw STV + IF,0.62,0.5343838919011605,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,2.0,3,0.56
+WR-STV k=1,0.6374193548387097,0.5454355613954673,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,2.0,3,0.48
+Max-Z Residual STV,0.6296774193548388,0.545166144705986,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,2.0,3,0.48
+Raw STV + IF,0.6212903225806452,0.5322889874136433,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,3.0,1,0.56
+WR-STV k=1,0.6503225806451614,0.5546174499248392,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,3.0,1,0.52
+Max-Z Residual STV,0.6445161290322581,0.5509999521883486,0.48,0.48,0.48,0.48,dataset_2,4,largest_visible,multiplicative,3.0,1,0.48
+Raw STV + IF,0.6316129032258064,0.5462364925400957,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,3.0,3,0.6
+WR-STV k=1,0.6619354838709677,0.5645867950045436,0.6,0.6,0.6,0.6,dataset_2,4,largest_visible,multiplicative,3.0,3,0.52
+Max-Z Residual STV,0.6580645161290323,0.5597155048940544,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,3.0,3,0.52
+Raw STV + IF,0.6238709677419355,0.5336839683192625,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,5.0,1,0.56
+WR-STV k=1,0.687741935483871,0.583321150861773,0.64,0.64,0.64,0.64,dataset_2,4,largest_visible,multiplicative,5.0,1,0.56
+Max-Z Residual STV,0.6735483870967742,0.5659144515838214,0.52,0.52,0.52,0.52,dataset_2,4,largest_visible,multiplicative,5.0,1,0.56
+Raw STV + IF,0.6361290322580646,0.5691314734457149,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,5.0,3,0.64
+WR-STV k=1,0.6890322580645161,0.5810023885383693,0.64,0.64,0.64,0.64,dataset_2,4,largest_visible,multiplicative,5.0,3,0.56
+Max-Z Residual STV,0.6838709677419355,0.5653652826869253,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,5.0,3,0.56
+Raw STV + IF,0.6341935483870969,0.5461474603827544,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,10.0,1,0.6
+WR-STV k=1,0.7548387096774194,0.6612216280109,0.68,0.68,0.68,0.68,dataset_2,4,largest_visible,multiplicative,10.0,1,0.64
+Max-Z Residual STV,0.712258064516129,0.5999385173654647,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,10.0,1,0.64
+Raw STV + IF,0.6419354838709678,0.5753335874651664,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,10.0,3,0.64
+WR-STV k=1,0.7619354838709678,0.6754288722694296,0.68,0.68,0.68,0.68,dataset_2,4,largest_visible,multiplicative,10.0,3,0.64
+Max-Z Residual STV,0.7329032258064516,0.6251019606242559,0.6,0.6,0.6,0.6,dataset_2,4,largest_visible,multiplicative,10.0,3,0.64
+Raw STV + IF,0.6393548387096775,0.5510368841684631,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,20.0,1,0.6
+WR-STV k=1,0.7845161290322581,0.7115004831409224,0.68,0.68,0.68,0.68,dataset_2,4,largest_visible,multiplicative,20.0,1,0.68
+Max-Z Residual STV,0.7458064516129033,0.623598967416213,0.6,0.6,0.6,0.6,dataset_2,4,largest_visible,multiplicative,20.0,1,0.68
+Raw STV + IF,0.6483870967741936,0.5836113331113331,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,20.0,3,0.64
+WR-STV k=1,0.7812903225806451,0.7178316085723935,0.72,0.72,0.72,0.72,dataset_2,4,largest_visible,multiplicative,20.0,3,0.68
+Max-Z Residual STV,0.7587096774193548,0.6443790303408112,0.68,0.68,0.68,0.68,dataset_2,4,largest_visible,multiplicative,20.0,3,0.68
+Raw STV + IF,0.6419354838709678,0.5727951259267048,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,30.0,1,0.64
+WR-STV k=1,0.7948387096774193,0.7385543276644417,0.72,0.72,0.72,0.72,dataset_2,4,largest_visible,multiplicative,30.0,1,0.68
+Max-Z Residual STV,0.7587096774193548,0.6342713552065631,0.64,0.64,0.64,0.64,dataset_2,4,largest_visible,multiplicative,30.0,1,0.68
+Raw STV + IF,0.6483870967741936,0.5836113331113331,0.56,0.56,0.56,0.56,dataset_2,4,largest_visible,multiplicative,30.0,3,0.64
+WR-STV k=1,0.7916129032258065,0.74383297275443,0.72,0.72,0.72,0.72,dataset_2,4,largest_visible,multiplicative,30.0,3,0.68
+Max-Z Residual STV,0.7767741935483872,0.6627593505739958,0.68,0.68,0.68,0.68,dataset_2,4,largest_visible,multiplicative,30.0,3,0.68
+Raw STV + IF,0.6012903225806452,0.5046003987608568,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,10.0,1,0.12
+WR-STV k=1,0.5922580645161291,0.5010546590004179,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,10.0,1,0.24
+Max-Z Residual STV,0.5929032258064516,0.5035994277076199,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,10.0,1,0.24
+Raw STV + IF,0.6012903225806452,0.5056530303398041,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,10.0,3,0.16
+WR-STV k=1,0.5896774193548387,0.5024306245381481,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,10.0,3,0.32
+Max-Z Residual STV,0.5851612903225807,0.49506303171307,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,10.0,3,0.36
+Raw STV + IF,0.6064516129032258,0.5098370642677514,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,25.0,1,0.2
+WR-STV k=1,0.5806451612903226,0.49013143400305104,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,25.0,1,0.24
+Max-Z Residual STV,0.5838709677419355,0.4922861373803762,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,25.0,1,0.24
+Raw STV + IF,0.6051612903225807,0.5108896958466987,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,25.0,3,0.24
+WR-STV k=1,0.5741935483870968,0.48409605847767584,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,25.0,3,0.36
+Max-Z Residual STV,0.5709677419354839,0.4799149367198137,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,25.0,3,0.36
+Raw STV + IF,0.6090322580645161,0.5199304620133232,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,50.0,1,0.36
+WR-STV k=1,0.5703225806451613,0.48567378504975,0.44,0.44,0.44,0.44,dataset_2,4,random_visible,additive_ms,50.0,1,0.24
+Max-Z Residual STV,0.5774193548387097,0.49090522787711455,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,50.0,1,0.24
+Raw STV + IF,0.6096774193548387,0.5195608713700482,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,50.0,3,0.4
+WR-STV k=1,0.5690322580645162,0.4814607668360937,0.44,0.44,0.44,0.44,dataset_2,4,random_visible,additive_ms,50.0,3,0.4
+Max-Z Residual STV,0.5658064516129032,0.4790229038545212,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,50.0,3,0.4
+Raw STV + IF,0.610967741935484,0.5254073360165129,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,100.0,1,0.4
+WR-STV k=1,0.5470967741935484,0.47280810185501776,0.44,0.44,0.44,0.44,dataset_2,4,random_visible,additive_ms,100.0,1,0.28
+Max-Z Residual STV,0.5477419354838711,0.47554168304372724,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,100.0,1,0.28
+Raw STV + IF,0.616774193548387,0.5299270284098895,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,100.0,3,0.44
+WR-STV k=1,0.5445161290322581,0.4692137999295339,0.44,0.44,0.44,0.44,dataset_2,4,random_visible,additive_ms,100.0,3,0.44
+Max-Z Residual STV,0.5438709677419354,0.4676175286872914,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,100.0,3,0.44
+Raw STV + IF,0.6193548387096774,0.5303453583453583,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,250.0,1,0.44
+WR-STV k=1,0.578709677419355,0.4981529666598795,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,250.0,1,0.44
+Max-Z Residual STV,0.5909677419354838,0.5060696627397999,0.48,0.48,0.48,0.48,dataset_2,4,random_visible,additive_ms,250.0,1,0.36
+Raw STV + IF,0.6270967741935484,0.5554521034521034,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,additive_ms,250.0,3,0.52
+WR-STV k=1,0.6051612903225807,0.5142561008289885,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,250.0,3,0.48
+Max-Z Residual STV,0.5903225806451613,0.5013582177314845,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,250.0,3,0.48
+Raw STV + IF,0.6238709677419355,0.5336386211800846,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,500.0,1,0.48
+WR-STV k=1,0.6270967741935485,0.5384075958756307,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,500.0,1,0.56
+Max-Z Residual STV,0.6412903225806452,0.5471144100977201,0.52,0.52,0.52,0.52,dataset_2,4,random_visible,additive_ms,500.0,1,0.48
+Raw STV + IF,0.6387096774193548,0.5660058025825601,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,additive_ms,500.0,3,0.56
+WR-STV k=1,0.6438709677419354,0.5547037104315626,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,additive_ms,500.0,3,0.56
+Max-Z Residual STV,0.6419354838709677,0.5445853691651987,0.56,0.56,0.56,0.56,dataset_2,4,random_visible,additive_ms,500.0,3,0.56
