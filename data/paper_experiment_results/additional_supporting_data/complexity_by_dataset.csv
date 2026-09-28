@@ -1,0 +1,289 @@
+dataset,missing_policy,method,complexity_measure,pearson_mean,pearson_std,runs
+dataset_1,sentinel,Max-Z Residual STV,max_span_duration,0.48825433804182394,0.08432079739481457,5
+dataset_1,sentinel,Max-Z Residual STV,mean_span_duration,0.3103184930434972,0.12631767818106715,5
+dataset_1,sentinel,Max-Z Residual STV,num_observed_stv_features,0.3676543924916231,0.08717125290799331,5
+dataset_1,sentinel,Max-Z Residual STV,num_services,0.3903796226824433,0.12013110092775509,5
+dataset_1,sentinel,Max-Z Residual STV,num_spans,0.2945653257923593,0.15114800233502865,5
+dataset_1,sentinel,Max-Z Residual STV,total_duration,0.38744906355184305,0.07823170539026644,5
+dataset_1,sentinel,Raw STV + IF,max_span_duration,0.6681490234901156,0.0947055030602629,5
+dataset_1,sentinel,Raw STV + IF,mean_span_duration,-0.004536900899961923,0.06271426049005464,5
+dataset_1,sentinel,Raw STV + IF,num_observed_stv_features,0.9564973983105375,0.015910341645902142,5
+dataset_1,sentinel,Raw STV + IF,num_services,0.9586380386540354,0.009048705311500592,5
+dataset_1,sentinel,Raw STV + IF,num_spans,0.8461499885449889,0.08647125005015086,5
+dataset_1,sentinel,Raw STV + IF,total_duration,0.8221838895415872,0.048039380148838906,5
+dataset_1,sentinel,Raw STV + LOF,max_span_duration,0.7104191874522667,0.08258444661529749,5
+dataset_1,sentinel,Raw STV + LOF,mean_span_duration,0.09380920054290023,0.11016467368388251,5
+dataset_1,sentinel,Raw STV + LOF,num_observed_stv_features,0.9007549627883179,0.05624384693853108,5
+dataset_1,sentinel,Raw STV + LOF,num_services,0.8998134993443717,0.05012561046954103,5
+dataset_1,sentinel,Raw STV + LOF,num_spans,0.7620911202031785,0.11881306905775493,5
+dataset_1,sentinel,Raw STV + LOF,total_duration,0.8188184184400263,0.07133562549613087,5
+dataset_1,sentinel,Raw STV + OCSVM,max_span_duration,0.4390599978060833,0.05168611594084294,5
+dataset_1,sentinel,Raw STV + OCSVM,mean_span_duration,0.2055861549372177,0.10306080535534534,5
+dataset_1,sentinel,Raw STV + OCSVM,num_observed_stv_features,0.4544188570137875,0.06734060817570067,5
+dataset_1,sentinel,Raw STV + OCSVM,num_services,0.541190716030869,0.057878402863066745,5
+dataset_1,sentinel,Raw STV + OCSVM,num_spans,0.34770199200239543,0.09070311539598958,5
+dataset_1,sentinel,Raw STV + OCSVM,total_duration,0.40537845563736186,0.05766994126693204,5
+dataset_1,sentinel,Residual STV + IF,max_span_duration,0.6231168297377292,0.16988004671642726,5
+dataset_1,sentinel,Residual STV + IF,mean_span_duration,-0.01529543534011366,0.05302250133770026,5
+dataset_1,sentinel,Residual STV + IF,num_observed_stv_features,0.9434980731741683,0.0408754138868434,5
+dataset_1,sentinel,Residual STV + IF,num_services,0.9010875966736279,0.028116981821544457,5
+dataset_1,sentinel,Residual STV + IF,num_spans,0.7715944850490833,0.12414415181077353,5
+dataset_1,sentinel,Residual STV + IF,total_duration,0.7734594422917186,0.14051710592297126,5
+dataset_1,sentinel,Residual STV + LOF,max_span_duration,0.7157790868500665,0.0885644073436611,5
+dataset_1,sentinel,Residual STV + LOF,mean_span_duration,0.25121056606263814,0.16039941652566286,5
+dataset_1,sentinel,Residual STV + LOF,num_observed_stv_features,0.7097085845125232,0.13491760811190534,5
+dataset_1,sentinel,Residual STV + LOF,num_services,0.6950929651323985,0.12034426225534525,5
+dataset_1,sentinel,Residual STV + LOF,num_spans,0.5625908139208508,0.2007111399736664,5
+dataset_1,sentinel,Residual STV + LOF,total_duration,0.7035921805444859,0.131670865820487,5
+dataset_1,sentinel,Residual STV + OCSVM,max_span_duration,0.46985959216554674,0.09146816510444827,5
+dataset_1,sentinel,Residual STV + OCSVM,mean_span_duration,0.24070327458513976,0.08616322874682714,5
+dataset_1,sentinel,Residual STV + OCSVM,num_observed_stv_features,0.45025771502423834,0.044441888162616724,5
+dataset_1,sentinel,Residual STV + OCSVM,num_services,0.5071986130698881,0.05502747628263524,5
+dataset_1,sentinel,Residual STV + OCSVM,num_spans,0.3986849638534685,0.05905220268762588,5
+dataset_1,sentinel,Residual STV + OCSVM,total_duration,0.42166422636412937,0.07016185609403577,5
+dataset_1,sentinel,WR-STV k=1,max_span_duration,0.36979308304312336,0.0893866404475239,5
+dataset_1,sentinel,WR-STV k=1,mean_span_duration,0.275103596920184,0.0990830948160759,5
+dataset_1,sentinel,WR-STV k=1,num_observed_stv_features,0.30560440174915776,0.048934414067766704,5
+dataset_1,sentinel,WR-STV k=1,num_services,0.32989317771757154,0.07057850253016414,5
+dataset_1,sentinel,WR-STV k=1,num_spans,0.2481544544382202,0.09119688666663865,5
+dataset_1,sentinel,WR-STV k=1,total_duration,0.2823716822524882,0.07269065836373137,5
+dataset_1,zero,Max-Z Residual STV,max_span_duration,0.48825433804182394,0.08432079739481457,5
+dataset_1,zero,Max-Z Residual STV,mean_span_duration,0.3103184930434972,0.12631767818106715,5
+dataset_1,zero,Max-Z Residual STV,num_observed_stv_features,0.3676543924916231,0.08717125290799331,5
+dataset_1,zero,Max-Z Residual STV,num_services,0.3903796226824433,0.12013110092775509,5
+dataset_1,zero,Max-Z Residual STV,num_spans,0.2945653257923593,0.15114800233502865,5
+dataset_1,zero,Max-Z Residual STV,total_duration,0.38744906355184305,0.07823170539026644,5
+dataset_1,zero,Raw STV + IF,max_span_duration,0.6704918545318208,0.09333535989051824,5
+dataset_1,zero,Raw STV + IF,mean_span_duration,-0.0039005132248640132,0.06372383774645228,5
+dataset_1,zero,Raw STV + IF,num_observed_stv_features,0.9570637404192247,0.01562965846126027,5
+dataset_1,zero,Raw STV + IF,num_services,0.9585295598677351,0.009140580351498692,5
+dataset_1,zero,Raw STV + IF,num_spans,0.8480512303719397,0.08584210935738612,5
+dataset_1,zero,Raw STV + IF,total_duration,0.8247770344572889,0.046353029762262556,5
+dataset_1,zero,Raw STV + LOF,max_span_duration,0.7143699933348809,0.08158180406401709,5
+dataset_1,zero,Raw STV + LOF,mean_span_duration,0.10135897058957258,0.11200806397904092,5
+dataset_1,zero,Raw STV + LOF,num_observed_stv_features,0.8986464191251315,0.05665621715797755,5
+dataset_1,zero,Raw STV + LOF,num_services,0.8977234085406444,0.05078004149803962,5
+dataset_1,zero,Raw STV + LOF,num_spans,0.7607681985795296,0.1189671978464037,5
+dataset_1,zero,Raw STV + LOF,total_duration,0.8206189414034952,0.07061033727949456,5
+dataset_1,zero,Raw STV + OCSVM,max_span_duration,0.452328448484955,0.05336552964464114,5
+dataset_1,zero,Raw STV + OCSVM,mean_span_duration,0.22486347169039292,0.10021966684501457,5
+dataset_1,zero,Raw STV + OCSVM,num_observed_stv_features,0.4561597295038705,0.06691218720048109,5
+dataset_1,zero,Raw STV + OCSVM,num_services,0.5425457062706011,0.05782764940248762,5
+dataset_1,zero,Raw STV + OCSVM,num_spans,0.35081903398702685,0.09065397848635252,5
+dataset_1,zero,Raw STV + OCSVM,total_duration,0.41278061070873495,0.05883734491800298,5
+dataset_1,zero,Residual STV + IF,max_span_duration,0.6231168297377292,0.16988004671642726,5
+dataset_1,zero,Residual STV + IF,mean_span_duration,-0.01529543534011366,0.05302250133770026,5
+dataset_1,zero,Residual STV + IF,num_observed_stv_features,0.9434980731741683,0.0408754138868434,5
+dataset_1,zero,Residual STV + IF,num_services,0.9010875966736279,0.028116981821544457,5
+dataset_1,zero,Residual STV + IF,num_spans,0.7715944850490833,0.12414415181077353,5
+dataset_1,zero,Residual STV + IF,total_duration,0.7734594422917186,0.14051710592297126,5
+dataset_1,zero,Residual STV + LOF,max_span_duration,0.7157790868500665,0.0885644073436611,5
+dataset_1,zero,Residual STV + LOF,mean_span_duration,0.25121056606263814,0.16039941652566286,5
+dataset_1,zero,Residual STV + LOF,num_observed_stv_features,0.7097085845125232,0.13491760811190534,5
+dataset_1,zero,Residual STV + LOF,num_services,0.6950929651323985,0.12034426225534525,5
+dataset_1,zero,Residual STV + LOF,num_spans,0.5625908139208508,0.2007111399736664,5
+dataset_1,zero,Residual STV + LOF,total_duration,0.7035921805444859,0.131670865820487,5
+dataset_1,zero,Residual STV + OCSVM,max_span_duration,0.46985959216554674,0.09146816510444827,5
+dataset_1,zero,Residual STV + OCSVM,mean_span_duration,0.24070327458513976,0.08616322874682714,5
+dataset_1,zero,Residual STV + OCSVM,num_observed_stv_features,0.45025771502423834,0.044441888162616724,5
+dataset_1,zero,Residual STV + OCSVM,num_services,0.5071986130698881,0.05502747628263524,5
+dataset_1,zero,Residual STV + OCSVM,num_spans,0.3986849638534685,0.05905220268762588,5
+dataset_1,zero,Residual STV + OCSVM,total_duration,0.42166422636412937,0.07016185609403577,5
+dataset_1,zero,WR-STV k=1,max_span_duration,0.36979308304312336,0.0893866404475239,5
+dataset_1,zero,WR-STV k=1,mean_span_duration,0.275103596920184,0.0990830948160759,5
+dataset_1,zero,WR-STV k=1,num_observed_stv_features,0.30560440174915776,0.048934414067766704,5
+dataset_1,zero,WR-STV k=1,num_services,0.32989317771757154,0.07057850253016414,5
+dataset_1,zero,WR-STV k=1,num_spans,0.2481544544382202,0.09119688666663865,5
+dataset_1,zero,WR-STV k=1,total_duration,0.2823716822524882,0.07269065836373137,5
+dataset_2,sentinel,Max-Z Residual STV,max_span_duration,0.3534135412216802,0.06075505142925469,5
+dataset_2,sentinel,Max-Z Residual STV,mean_span_duration,0.2757211523128736,0.1304526175423607,5
+dataset_2,sentinel,Max-Z Residual STV,num_observed_stv_features,0.5262481298382663,0.06740023438790058,5
+dataset_2,sentinel,Max-Z Residual STV,num_services,0.33484312621667733,0.22713275118552823,5
+dataset_2,sentinel,Max-Z Residual STV,num_spans,0.27774949145127403,0.223929612794341,5
+dataset_2,sentinel,Max-Z Residual STV,total_duration,0.3607270005810087,0.15351342151472724,5
+dataset_2,sentinel,Raw STV + IF,max_span_duration,0.3823745574958211,0.3200549572750959,5
+dataset_2,sentinel,Raw STV + IF,mean_span_duration,-0.054613614827205656,0.06367684436920708,5
+dataset_2,sentinel,Raw STV + IF,num_observed_stv_features,0.9481939086665966,0.0399317691932477,5
+dataset_2,sentinel,Raw STV + IF,num_services,0.6683048485604646,0.36290773886210204,5
+dataset_2,sentinel,Raw STV + IF,num_spans,0.6570656120165188,0.4233353807428551,5
+dataset_2,sentinel,Raw STV + IF,total_duration,0.550995714709549,0.3680175362435051,5
+dataset_2,sentinel,Raw STV + LOF,max_span_duration,0.5265495279960319,0.17470746804981072,5
+dataset_2,sentinel,Raw STV + LOF,mean_span_duration,0.05801255897111892,0.11005752609907392,5
+dataset_2,sentinel,Raw STV + LOF,num_observed_stv_features,0.9456119979482205,0.06792760957208832,5
+dataset_2,sentinel,Raw STV + LOF,num_services,0.7530197756630349,0.3138178101755328,5
+dataset_2,sentinel,Raw STV + LOF,num_spans,0.7102930999879462,0.3812705961688686,5
+dataset_2,sentinel,Raw STV + LOF,total_duration,0.6931543242930902,0.22318264222228196,5
+dataset_2,sentinel,Raw STV + OCSVM,max_span_duration,0.2416762488215171,0.16332639050924494,5
+dataset_2,sentinel,Raw STV + OCSVM,mean_span_duration,0.15474957591732497,0.10170081989953066,5
+dataset_2,sentinel,Raw STV + OCSVM,num_observed_stv_features,0.6289759608996449,0.2535486555251046,5
+dataset_2,sentinel,Raw STV + OCSVM,num_services,0.3705707243498687,0.30452240821432713,5
+dataset_2,sentinel,Raw STV + OCSVM,num_spans,0.264309335915542,0.3198392593913271,5
+dataset_2,sentinel,Raw STV + OCSVM,total_duration,0.3057276995987951,0.22374125939205314,5
+dataset_2,sentinel,Residual STV + IF,max_span_duration,0.3683485064677803,0.24767576453252999,5
+dataset_2,sentinel,Residual STV + IF,mean_span_duration,-0.03616644652553159,0.03211162216041055,5
+dataset_2,sentinel,Residual STV + IF,num_observed_stv_features,0.9129517050128438,0.08272109597676304,5
+dataset_2,sentinel,Residual STV + IF,num_services,0.6700383267966813,0.29021638331145994,5
+dataset_2,sentinel,Residual STV + IF,num_spans,0.6346164810475823,0.34560940304476373,5
+dataset_2,sentinel,Residual STV + IF,total_duration,0.5377046486827616,0.28222255140369656,5
+dataset_2,sentinel,Residual STV + LOF,max_span_duration,0.5039351218494253,0.12510674101152836,5
+dataset_2,sentinel,Residual STV + LOF,mean_span_duration,0.19176072166361413,0.1413732010820044,5
+dataset_2,sentinel,Residual STV + LOF,num_observed_stv_features,0.8049096280056005,0.13399183103134854,5
+dataset_2,sentinel,Residual STV + LOF,num_services,0.6178747259712857,0.31041859279402584,5
+dataset_2,sentinel,Residual STV + LOF,num_spans,0.5527637409322851,0.32875931079617127,5
+dataset_2,sentinel,Residual STV + LOF,total_duration,0.5828924315962871,0.21020886908648334,5
+dataset_2,sentinel,Residual STV + OCSVM,max_span_duration,0.26539204417838047,0.06873820706220474,5
+dataset_2,sentinel,Residual STV + OCSVM,mean_span_duration,0.20860626648409414,0.16976189588737675,5
+dataset_2,sentinel,Residual STV + OCSVM,num_observed_stv_features,0.4321735786095443,0.049922912509224315,5
+dataset_2,sentinel,Residual STV + OCSVM,num_services,0.24910525522560573,0.20962480710772927,5
+dataset_2,sentinel,Residual STV + OCSVM,num_spans,0.19800629010763485,0.20289203407327278,5
+dataset_2,sentinel,Residual STV + OCSVM,total_duration,0.26744571351834967,0.13379240828635866,5
+dataset_2,sentinel,WR-STV k=1,max_span_duration,0.2985273377374742,0.05576900250546174,5
+dataset_2,sentinel,WR-STV k=1,mean_span_duration,0.20921322032713668,0.11058109095285944,5
+dataset_2,sentinel,WR-STV k=1,num_observed_stv_features,0.52612356500918,0.17387980631781816,5
+dataset_2,sentinel,WR-STV k=1,num_services,0.2946704758384885,0.1840565081002638,5
+dataset_2,sentinel,WR-STV k=1,num_spans,0.2354404629291837,0.21105472096411212,5
+dataset_2,sentinel,WR-STV k=1,total_duration,0.32042700898652987,0.12579648623953993,5
+dataset_2,zero,Max-Z Residual STV,max_span_duration,0.3534135412216802,0.06075505142925469,5
+dataset_2,zero,Max-Z Residual STV,mean_span_duration,0.2757211523128736,0.1304526175423607,5
+dataset_2,zero,Max-Z Residual STV,num_observed_stv_features,0.5262481298382663,0.06740023438790058,5
+dataset_2,zero,Max-Z Residual STV,num_services,0.33484312621667733,0.22713275118552823,5
+dataset_2,zero,Max-Z Residual STV,num_spans,0.27774949145127403,0.223929612794341,5
+dataset_2,zero,Max-Z Residual STV,total_duration,0.3607270005810087,0.15351342151472724,5
+dataset_2,zero,Raw STV + IF,max_span_duration,0.38390772866832645,0.31734315188344236,5
+dataset_2,zero,Raw STV + IF,mean_span_duration,-0.05275463731644192,0.06377974318881896,5
+dataset_2,zero,Raw STV + IF,num_observed_stv_features,0.9496282995733658,0.03803776518424892,5
+dataset_2,zero,Raw STV + IF,num_services,0.6691085678958818,0.36395605251890073,5
+dataset_2,zero,Raw STV + IF,num_spans,0.657441065636601,0.4250822052201166,5
+dataset_2,zero,Raw STV + IF,total_duration,0.5524811913245741,0.36579585105136914,5
+dataset_2,zero,Raw STV + LOF,max_span_duration,0.5315851943941076,0.17258085451938418,5
+dataset_2,zero,Raw STV + LOF,mean_span_duration,0.06416365000862026,0.11184721814276133,5
+dataset_2,zero,Raw STV + LOF,num_observed_stv_features,0.9439600239220137,0.06901329784802022,5
+dataset_2,zero,Raw STV + LOF,num_services,0.7518548734761888,0.3140277959947642,5
+dataset_2,zero,Raw STV + LOF,num_spans,0.7083663829375645,0.38140251764215294,5
+dataset_2,zero,Raw STV + LOF,total_duration,0.6964484619979674,0.2218781745746796,5
+dataset_2,zero,Raw STV + OCSVM,max_span_duration,0.25336254786986306,0.1600610755665235,5
+dataset_2,zero,Raw STV + OCSVM,mean_span_duration,0.1672384565695968,0.1001626516119173,5
+dataset_2,zero,Raw STV + OCSVM,num_observed_stv_features,0.6297628956991741,0.24809882857808424,5
+dataset_2,zero,Raw STV + OCSVM,num_services,0.3736434378127199,0.30228316343065953,5
+dataset_2,zero,Raw STV + OCSVM,num_spans,0.2674435854634331,0.31775917638316176,5
+dataset_2,zero,Raw STV + OCSVM,total_duration,0.31431296554021193,0.22072299246897648,5
+dataset_2,zero,Residual STV + IF,max_span_duration,0.3683485064677803,0.24767576453252999,5
+dataset_2,zero,Residual STV + IF,mean_span_duration,-0.03616644652553159,0.03211162216041055,5
+dataset_2,zero,Residual STV + IF,num_observed_stv_features,0.9129517050128438,0.08272109597676304,5
+dataset_2,zero,Residual STV + IF,num_services,0.6700383267966813,0.29021638331145994,5
+dataset_2,zero,Residual STV + IF,num_spans,0.6346164810475823,0.34560940304476373,5
+dataset_2,zero,Residual STV + IF,total_duration,0.5377046486827616,0.28222255140369656,5
+dataset_2,zero,Residual STV + LOF,max_span_duration,0.5039351218494253,0.12510674101152836,5
+dataset_2,zero,Residual STV + LOF,mean_span_duration,0.19176072166361413,0.1413732010820044,5
+dataset_2,zero,Residual STV + LOF,num_observed_stv_features,0.8049096280056005,0.13399183103134854,5
+dataset_2,zero,Residual STV + LOF,num_services,0.6178747259712857,0.31041859279402584,5
+dataset_2,zero,Residual STV + LOF,num_spans,0.5527637409322851,0.32875931079617127,5
+dataset_2,zero,Residual STV + LOF,total_duration,0.5828924315962871,0.21020886908648334,5
+dataset_2,zero,Residual STV + OCSVM,max_span_duration,0.26539204417838047,0.06873820706220474,5
+dataset_2,zero,Residual STV + OCSVM,mean_span_duration,0.20860626648409414,0.16976189588737675,5
+dataset_2,zero,Residual STV + OCSVM,num_observed_stv_features,0.4321735786095443,0.049922912509224315,5
+dataset_2,zero,Residual STV + OCSVM,num_services,0.24910525522560573,0.20962480710772927,5
+dataset_2,zero,Residual STV + OCSVM,num_spans,0.19800629010763485,0.20289203407327278,5
+dataset_2,zero,Residual STV + OCSVM,total_duration,0.26744571351834967,0.13379240828635866,5
+dataset_2,zero,WR-STV k=1,max_span_duration,0.2985273377374742,0.05576900250546174,5
+dataset_2,zero,WR-STV k=1,mean_span_duration,0.20921322032713668,0.11058109095285944,5
+dataset_2,zero,WR-STV k=1,num_observed_stv_features,0.52612356500918,0.17387980631781816,5
+dataset_2,zero,WR-STV k=1,num_services,0.2946704758384885,0.1840565081002638,5
+dataset_2,zero,WR-STV k=1,num_spans,0.2354404629291837,0.21105472096411212,5
+dataset_2,zero,WR-STV k=1,total_duration,0.32042700898652987,0.12579648623953993,5
+dataset_3,sentinel,Max-Z Residual STV,max_span_duration,0.43390051709540545,0.11829124492023772,5
+dataset_3,sentinel,Max-Z Residual STV,mean_span_duration,0.340066917817374,0.1803756737039943,5
+dataset_3,sentinel,Max-Z Residual STV,num_observed_stv_features,0.43650264176171233,0.050959481343644183,5
+dataset_3,sentinel,Max-Z Residual STV,num_services,0.42275250720671237,0.07471051461247788,5
+dataset_3,sentinel,Max-Z Residual STV,num_spans,0.3985721817334226,0.06680086874874892,5
+dataset_3,sentinel,Max-Z Residual STV,total_duration,0.40686119520135955,0.10972641848211023,5
+dataset_3,sentinel,Raw STV + IF,max_span_duration,0.6590297059518586,0.16352471622766768,5
+dataset_3,sentinel,Raw STV + IF,mean_span_duration,0.14325215312426023,0.08632040926324167,5
+dataset_3,sentinel,Raw STV + IF,num_observed_stv_features,0.9750007507519924,0.0041462049156060134,5
+dataset_3,sentinel,Raw STV + IF,num_services,0.9763802550117606,0.01076776843827874,5
+dataset_3,sentinel,Raw STV + IF,num_spans,0.9572701449098873,0.01995086120762548,5
+dataset_3,sentinel,Raw STV + IF,total_duration,0.7279451182289021,0.06238011281487137,5
+dataset_3,sentinel,Raw STV + LOF,max_span_duration,0.6677540322239895,0.15758832206956233,5
+dataset_3,sentinel,Raw STV + LOF,mean_span_duration,0.18887160881902954,0.07154788117089825,5
+dataset_3,sentinel,Raw STV + LOF,num_observed_stv_features,0.9575449919571033,0.00980668718106347,5
+dataset_3,sentinel,Raw STV + LOF,num_services,0.9619487440069671,0.010838955657885759,5
+dataset_3,sentinel,Raw STV + LOF,num_spans,0.9426392322262167,0.02128378744798417,5
+dataset_3,sentinel,Raw STV + LOF,total_duration,0.7256629111320492,0.09634265369089465,5
+dataset_3,sentinel,Raw STV + OCSVM,max_span_duration,0.40465087001292543,0.11591265333727678,5
+dataset_3,sentinel,Raw STV + OCSVM,mean_span_duration,0.2688832803425301,0.10334029983258254,5
+dataset_3,sentinel,Raw STV + OCSVM,num_observed_stv_features,0.46670989732940527,0.04537851063265866,5
+dataset_3,sentinel,Raw STV + OCSVM,num_services,0.4796891199007513,0.06410189305016203,5
+dataset_3,sentinel,Raw STV + OCSVM,num_spans,0.3823241885865078,0.06614980447343442,5
+dataset_3,sentinel,Raw STV + OCSVM,total_duration,0.39175388611654566,0.11779877487320886,5
+dataset_3,sentinel,Residual STV + IF,max_span_duration,0.6942032062898632,0.22447215667691806,5
+dataset_3,sentinel,Residual STV + IF,mean_span_duration,0.1608294577583488,0.128382968253816,5
+dataset_3,sentinel,Residual STV + IF,num_observed_stv_features,0.9302336770143139,0.034242731721740145,5
+dataset_3,sentinel,Residual STV + IF,num_services,0.9353645062025808,0.03826098492175968,5
+dataset_3,sentinel,Residual STV + IF,num_spans,0.9319307569457198,0.044145692782580695,5
+dataset_3,sentinel,Residual STV + IF,total_duration,0.7613911902080357,0.11828826586136937,5
+dataset_3,sentinel,Residual STV + LOF,max_span_duration,0.690981555522452,0.16983191039113982,5
+dataset_3,sentinel,Residual STV + LOF,mean_span_duration,0.295351410617666,0.1028603015944725,5
+dataset_3,sentinel,Residual STV + LOF,num_observed_stv_features,0.7912580015428596,0.06298355997617937,5
+dataset_3,sentinel,Residual STV + LOF,num_services,0.7830937382793554,0.08008285322556433,5
+dataset_3,sentinel,Residual STV + LOF,num_spans,0.7714441626308692,0.08951128756132543,5
+dataset_3,sentinel,Residual STV + LOF,total_duration,0.7209635228466943,0.12211158250057236,5
+dataset_3,sentinel,Residual STV + OCSVM,max_span_duration,0.3613382844922496,0.03293863399473094,5
+dataset_3,sentinel,Residual STV + OCSVM,mean_span_duration,0.24992048299184466,0.13241140256964948,5
+dataset_3,sentinel,Residual STV + OCSVM,num_observed_stv_features,0.4277402338384264,0.027905376364854215,5
+dataset_3,sentinel,Residual STV + OCSVM,num_services,0.42655175744792134,0.036251800101473726,5
+dataset_3,sentinel,Residual STV + OCSVM,num_spans,0.38574023016046033,0.02832405916752501,5
+dataset_3,sentinel,Residual STV + OCSVM,total_duration,0.35081152995272474,0.04182796287160134,5
+dataset_3,sentinel,WR-STV k=1,max_span_duration,0.34464937482100444,0.12075172953790483,5
+dataset_3,sentinel,WR-STV k=1,mean_span_duration,0.2957864171862602,0.19068973959732025,5
+dataset_3,sentinel,WR-STV k=1,num_observed_stv_features,0.2724762124943531,0.041228247764225415,5
+dataset_3,sentinel,WR-STV k=1,num_services,0.2642579273894574,0.06369034641650309,5
+dataset_3,sentinel,WR-STV k=1,num_spans,0.23100116364453943,0.056471466953574245,5
+dataset_3,sentinel,WR-STV k=1,total_duration,0.30086705958434395,0.09219511148934569,5
+dataset_3,zero,Max-Z Residual STV,max_span_duration,0.43390051709540545,0.11829124492023772,5
+dataset_3,zero,Max-Z Residual STV,mean_span_duration,0.340066917817374,0.1803756737039943,5
+dataset_3,zero,Max-Z Residual STV,num_observed_stv_features,0.43650264176171233,0.050959481343644183,5
+dataset_3,zero,Max-Z Residual STV,num_services,0.42275250720671237,0.07471051461247788,5
+dataset_3,zero,Max-Z Residual STV,num_spans,0.3985721817334226,0.06680086874874892,5
+dataset_3,zero,Max-Z Residual STV,total_duration,0.40686119520135955,0.10972641848211023,5
+dataset_3,zero,Raw STV + IF,max_span_duration,0.6628708122835746,0.16400830786684104,5
+dataset_3,zero,Raw STV + IF,mean_span_duration,0.14609569583531884,0.08722946190655936,5
+dataset_3,zero,Raw STV + IF,num_observed_stv_features,0.974156603801633,0.0038448102286099154,5
+dataset_3,zero,Raw STV + IF,num_services,0.9753953329648952,0.011126559568018488,5
+dataset_3,zero,Raw STV + IF,num_spans,0.9565757822140253,0.019889544105591378,5
+dataset_3,zero,Raw STV + IF,total_duration,0.7316850920954441,0.06229691520841802,5
+dataset_3,zero,Raw STV + LOF,max_span_duration,0.6743119487280451,0.15641324549226351,5
+dataset_3,zero,Raw STV + LOF,mean_span_duration,0.1957852580776138,0.07074331520024052,5
+dataset_3,zero,Raw STV + LOF,num_observed_stv_features,0.9563096475134227,0.009964123276795805,5
+dataset_3,zero,Raw STV + LOF,num_services,0.9610666825381206,0.011091042154809244,5
+dataset_3,zero,Raw STV + LOF,num_spans,0.942632572922135,0.02160116525169164,5
+dataset_3,zero,Raw STV + LOF,total_duration,0.7315332403151532,0.09580005656266061,5
+dataset_3,zero,Raw STV + OCSVM,max_span_duration,0.42090008086844116,0.12322448482616673,5
+dataset_3,zero,Raw STV + OCSVM,mean_span_duration,0.2917207398903835,0.10317920255671675,5
+dataset_3,zero,Raw STV + OCSVM,num_observed_stv_features,0.47103665386233723,0.04667261284966332,5
+dataset_3,zero,Raw STV + OCSVM,num_services,0.4845091246294119,0.06551591433990597,5
+dataset_3,zero,Raw STV + OCSVM,num_spans,0.39122914519637864,0.06935890700587677,5
+dataset_3,zero,Raw STV + OCSVM,total_duration,0.4057269522271095,0.12471024730889504,5
+dataset_3,zero,Residual STV + IF,max_span_duration,0.6942032062898632,0.22447215667691806,5
+dataset_3,zero,Residual STV + IF,mean_span_duration,0.1608294577583488,0.128382968253816,5
+dataset_3,zero,Residual STV + IF,num_observed_stv_features,0.9302336770143139,0.034242731721740145,5
+dataset_3,zero,Residual STV + IF,num_services,0.9353645062025808,0.03826098492175968,5
+dataset_3,zero,Residual STV + IF,num_spans,0.9319307569457198,0.044145692782580695,5
+dataset_3,zero,Residual STV + IF,total_duration,0.7613911902080357,0.11828826586136937,5
+dataset_3,zero,Residual STV + LOF,max_span_duration,0.690981555522452,0.16983191039113982,5
+dataset_3,zero,Residual STV + LOF,mean_span_duration,0.295351410617666,0.1028603015944725,5
+dataset_3,zero,Residual STV + LOF,num_observed_stv_features,0.7912580015428596,0.06298355997617937,5
+dataset_3,zero,Residual STV + LOF,num_services,0.7830937382793554,0.08008285322556433,5
+dataset_3,zero,Residual STV + LOF,num_spans,0.7714441626308692,0.08951128756132543,5
+dataset_3,zero,Residual STV + LOF,total_duration,0.7209635228466943,0.12211158250057236,5
+dataset_3,zero,Residual STV + OCSVM,max_span_duration,0.3613382844922496,0.03293863399473094,5
+dataset_3,zero,Residual STV + OCSVM,mean_span_duration,0.24992048299184466,0.13241140256964948,5
+dataset_3,zero,Residual STV + OCSVM,num_observed_stv_features,0.4277402338384264,0.027905376364854215,5
+dataset_3,zero,Residual STV + OCSVM,num_services,0.42655175744792134,0.036251800101473726,5
+dataset_3,zero,Residual STV + OCSVM,num_spans,0.38574023016046033,0.02832405916752501,5
+dataset_3,zero,Residual STV + OCSVM,total_duration,0.35081152995272474,0.04182796287160134,5
+dataset_3,zero,WR-STV k=1,max_span_duration,0.34464937482100444,0.12075172953790483,5
+dataset_3,zero,WR-STV k=1,mean_span_duration,0.2957864171862602,0.19068973959732025,5
+dataset_3,zero,WR-STV k=1,num_observed_stv_features,0.2724762124943531,0.041228247764225415,5
+dataset_3,zero,WR-STV k=1,num_services,0.2642579273894574,0.06369034641650309,5
+dataset_3,zero,WR-STV k=1,num_spans,0.23100116364453943,0.056471466953574245,5
+dataset_3,zero,WR-STV k=1,total_duration,0.30086705958434395,0.09219511148934569,5
